@@ -158,7 +158,7 @@ shiki:
   highlight_height_limit: 360 # code-block max height,unit: px
   is_highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
   copy: # copy message
-    success: "Copy Success"
+    success: "Copied!"
     error: "Copy Error"
     no_support: "Browser Not Support"
 
