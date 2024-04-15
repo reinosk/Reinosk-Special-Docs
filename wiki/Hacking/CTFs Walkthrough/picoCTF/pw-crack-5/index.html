@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>PW Crack 5 | Aritlh&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="picoCTF">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Hints Can you crack the password to get the flag? Download the password checker here and you’ll need the encrypted flag and the hash in the same directory too. Here’s a dictionary with all possible pa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PW Crack 5">
+<meta property="og:url" content="http://aritlh.github.io/wiki/Hacking/CTFs%20Walkthrough/picoCTF/pw-crack-5/index.html">
+<meta property="og:site_name" content="Aritlh&#39;s Wiki">
+<meta property="og:description" content="Hints Can you crack the password to get the flag? Download the password checker here and you’ll need the encrypted flag and the hash in the same directory too. Here’s a dictionary with all possible pa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/LYTMHWw.png">
+<meta property="og:image" content="https://i.imgur.com/rYqpDef.png">
+<meta property="article:published_time" content="2024-03-20T15:55:57.000Z">
+<meta property="article:modified_time" content="2024-04-15T02:29:53.983Z">
+<meta property="article:author" content="Aritlh">
+<meta property="article:tag" content="picoCTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/LYTMHWw.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Aritlh&#39;s Wiki" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Aritlh&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Hacking
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            CTFs Walkthrough
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Vulnhub
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Hacking/CTFs%20Walkthrough/Vulnhub/badstore-walkthrough/">Badstore v1.2.3 Walkthrough</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            picoCTF
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/pw-crack-3/">PW Crack 3</a></li>  <li class="file active"><a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/pw-crack-5/">PW Crack 5</a></li>  <li class="file"><a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/scavanger-hunt/">Scavanger Hunt</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Technology Development
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linux
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Arch
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Technology%20Development/Linux/Arch/arch-installation/">Arch Installation</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Gaming on Linux
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Technology%20Development/Linux/Gaming%20on%20Linux/osu-installation/">Osu! Installation</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome Aritlh's Wiki Site</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Hacking/CTFs Walkthrough/picoCTF/pw-crack-5" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Hacking/">Hacking</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Hacking/CTFs-Walkthrough/">CTFs Walkthrough</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Hacking/CTFs-Walkthrough/picoCTF/">picoCTF</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/picoCTF/" rel="tag">picoCTF</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/pw-crack-5/">
+            <time datetime="2024-03-20T15:55:57.000Z" itemprop="datePublished">2024-03-20</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/Hacking/CTFs Walkthrough/picoCTF/pw-crack-5.md"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/Hacking/CTFs Walkthrough/picoCTF/pw-crack-5.md"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/Hacking/CTFs Walkthrough/picoCTF/pw-crack-5.md"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            PW Crack 5
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="Hints"><a href="#Hints" class="headerlink" title="Hints"></a>Hints</h2><blockquote>
+<p><em>Can you crack the password to get the flag? Download the password checker <a target="_blank" rel="external nofollow noopener noreferrer" href="https://artifacts.picoctf.net/c/31/level5.py">here</a> and you’ll need the encrypted <a target="_blank" rel="external nofollow noopener noreferrer" href="https://artifacts.picoctf.net/c/31/level5.flag.txt.enc">flag</a> and the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://artifacts.picoctf.net/c/31/level5.hash.bin">hash</a> in the same directory too. Here’s a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://artifacts.picoctf.net/c/31/dictionary.txt">dictionary</a> with all possible passwords based on the password conventions we’ve seen so far.</em></p>
+</blockquote>
+<h2 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h2><p><img src="https://i.imgur.com/LYTMHWw.png" alt="..."></p>
+<p>we must create a new code from this reference.<br><img src="https://i.imgur.com/rYqpDef.png" alt="..."></p>
+<ul>
+<li>line 12 read <code>directory.txt</code> file</li>
+<li>line 14-17 validating password in <code>directory.txt</code> file.</li>
+</ul>
+<figure class="highlight py"><figcaption><span>&#123; linenos</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">correct_pw_hash = <span class="built_in">open</span>(<span class="string">&#x27;level5.hash.bin&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>).read()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hash_pw</span>(<span class="params">pw_str</span>):</span><br><span class="line">    pw_bytes = <span class="built_in">bytearray</span>()</span><br><span class="line">    pw_bytes.extend(pw_str.encode())</span><br><span class="line">    m = hashlib.md5()</span><br><span class="line">    m.update(pw_bytes)</span><br><span class="line">    <span class="keyword">return</span> m.digest()</span><br><span class="line"></span><br><span class="line">post_pw_list = <span class="built_in">open</span>(<span class="string">&#x27;dictionary.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>).read().splitlines()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> pw <span class="keyword">in</span> post_pw_list:</span><br><span class="line">    <span class="keyword">if</span> hash_pw(pw) == correct_pw_hash:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;This is your password: &#x27;</span> + pw)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p>run this code:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 crack.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This code is a password cracker that uses a dictionary attack to find a password. It imports the <code>hashlib</code> module to generate MD5 hashes of passwords. The correct password hash is read from a binary file <code>level5.hash.bin</code> and stored in the <code>correct_pw_hash</code> variable. The <code>hash_pw</code> function takes a string password, converts it to bytearray, hashes it using MD5, and returns the digest. A list of potential passwords is read from a text file <code>dictionary.txt</code> and stored in the <code>post_pw_list</code> variable. The code loops through each password in the <code>post_pw_list</code> list, hashes it using the <code>hash_pw</code> function, and compares it to the correct password hash. If a hashed password matches the correct password hash, the code prints the password and breaks the loop, effectively finding the correct password by brute-forcing it with a list of potential passwords.</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/scavanger-hunt/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Scavanger Hunt
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/Hacking/CTFs%20Walkthrough/picoCTF/pw-crack-3/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">PW Crack 3</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Aritlh &copy; 2024 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
