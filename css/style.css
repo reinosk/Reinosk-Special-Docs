@@ -131,7 +131,7 @@ a:visited {
 code {
   margin: 0 2px;
   color: #e96900;
-  padding: 3px 5px;
+  padding: auto;
   font-size: 0.8em;
   border-radius: 2px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
@@ -2288,68 +2288,53 @@ ol.toc {
   height: 1.6em;
 }
 .highlight {
-  color: #e0e2e4;
-  background: #282b2e;
-}
-.highlight .code .keyword,
-.highlight .code .selector-tag,
-.highlight .code .literal,
-.highlight .code .selector-id {
-  color: #93c763;
-}
-.highlight .code .number {
-  color: #ffcd22;
-}
-.highlight .code .attribute {
-  color: #668bb0;
-}
-.highlight .code .code,
-.highlight .code .class .title,
-.highlight .code .section {
-  color: #fff;
-}
-.highlight .code .regexp,
-.highlight .code .link {
-  color: #d39745;
-}
-.highlight .code .meta {
-  color: #557182;
-}
-.highlight .code .tag,
-.highlight .code .name,
-.highlight .code .bullet,
-.highlight .code .subst,
-.highlight .code .emphasis,
-.highlight .code .type,
-.highlight .code .built_in,
-.highlight .code .selector-attr,
-.highlight .code .selector-pseudo,
-.highlight .code .addition,
-.highlight .code .variable,
-.highlight .code .template-tag,
-.highlight .code .template-variable {
-  color: #8cbbad;
-}
-.highlight .code .string,
-.highlight .code .symbol {
-  color: #ec7600;
+  color: #4d4d4c;
+  background: #fff;
 }
 .highlight .code .comment,
-.highlight .code .quote,
-.highlight .code .deletion {
-  color: #818e96;
+.highlight .code .quote {
+  color: #8e908c;
 }
-.highlight .code .selector-class {
-  color: #a082bd;
+.highlight .code .variable,
+.highlight .code .template-variable,
+.highlight .code .tag,
+.highlight .code .name,
+.highlight .code .selector-id,
+.highlight .code .selector-class,
+.highlight .code .regexp,
+.highlight .code .deletion {
+  color: #c82829;
+}
+.highlight .code .number,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .literal,
+.highlight .code .type,
+.highlight .code .params,
+.highlight .code .meta,
+.highlight .code .link {
+  color: #f5871f;
+}
+.highlight .code .attribute {
+  color: #eab700;
+}
+.highlight .code .string,
+.highlight .code .symbol,
+.highlight .code .bullet,
+.highlight .code .addition {
+  color: #718c00;
+}
+.highlight .code .title,
+.highlight .code .section {
+  color: #4271ae;
 }
 .highlight .code .keyword,
-.highlight .code .selector-tag,
-.highlight .code .literal,
-.highlight .code .doctag,
-.highlight .code .title,
-.highlight .code .section,
-.highlight .code .type,
-.highlight .code .name,
+.highlight .code .selector-tag {
+  color: #8959a8;
+}
+.highlight .code .emphasis {
+  font-style: italic;
+}
 .highlight .code .strong {
   font-weight: bold;
 }

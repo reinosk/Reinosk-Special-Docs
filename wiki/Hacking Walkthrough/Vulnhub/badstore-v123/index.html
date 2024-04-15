@@ -71,7 +71,18 @@
     
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-<meta name="generator" content="Hexo 7.1.1"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#90a4ae;--hl-bg:#f6f8fa;--hltools-bg:#e6ebf1;--hltools-color:#90a4ae;--hlnumber-bg:#f6f8fa;--hlnumber-color:rgba(144,164,174,0.5);--hlscrollbar-bg:#dce4eb;--hlexpand-bg:linear-gradient(180deg,rgba(246,248,250,0.1),rgba(246,248,250,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
     <div id="container">
@@ -206,18 +217,9 @@
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder"></i>
                             &nbsp;
-                            Framework
-                        </a>
-                         <ul class="unstyled" id="tree"> 
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
                             VueJS
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/Framework/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  </ul> 
-                    </li> 
-                     </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -368,10 +370,10 @@
         
             <p>The following is a vulnhub engine search from 2004. While this website may not be completely safe from advanced attacks, it serves as a valuable learning resource for beginners like me to practice identifying and exploiting common and easy-to-find web application vulnerabilities.</p>
 <p>Boot the machine, then perform host scanning using <code>netdiscover</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo netdiscover</span></span><br></pre></td></tr></table></figure>
+<figure class="shiki shell"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">$</span><span style="color: #24292E"> </span><span style="color: #032F62">sudo</span><span style="color: #24292E"> </span><span style="color: #032F62">netdiscover</span></span></code></pre></div></div></figure>
 
 <p>After obtaining the target IP, perform port scanning using <code>nmap</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo nmap -sSC -Pn &lt;IP&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="shiki shell"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">$</span><span style="color: #24292E"> </span><span style="color: #032F62">sudo</span><span style="color: #24292E"> </span><span style="color: #032F62">nmap</span><span style="color: #24292E"> </span><span style="color: #005CC5">-sSC</span><span style="color: #24292E"> </span><span style="color: #005CC5">-Pn</span><span style="color: #24292E"> </span><span style="color: #D73A49">&lt;</span><span style="color: #032F62">I</span><span style="color: #24292E">P</span><span style="color: #D73A49">&gt;</span></span></code></pre></div></div></figure>
 
 <ul>
 <li><code>nmap</code>: Calls the Nmap program.</li>
@@ -383,9 +385,45 @@
 <p>So, this command will perform a TCP SYN port scan on <code>&lt;IP&gt;</code> display the version of Nmap in use, enable Nmap default scripts to gather additional information about the target, and will continue the scan without verifying whether the target is responding or not.</p>
 <p><img src="https://pbs.twimg.com/media/GK6bE6vagAAu4EM?format=jpg&name=large" alt="Scanning The Target"></p>
 <p>we also found MySQL service open, Let’s try to access the database using <strong>root</strong> user.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">PORT     STATE SERVICE  VERSION</span><br><span class="line">80/tcp   open  http     Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)</span><br><span class="line">| http-robots.txt: 5 disallowed entries </span><br><span class="line">|_/cgi-bin /scanbot /backup /supplier /upload</span><br><span class="line">|_http-server-header: Apache/1.3.28 (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c</span><br><span class="line">|_http-title: Welcome to BadStore.net v1.2.3s</span><br><span class="line">| http-methods: </span><br><span class="line">|_  Potentially risky methods: TRACE</span><br><span class="line">443/tcp  open  ssl/http Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)</span><br><span class="line">| sslv2: </span><br><span class="line">|   SSLv2 supported</span><br><span class="line">|   ciphers: </span><br><span class="line">|     SSL2_RC4_128_EXPORT40_WITH_MD5</span><br><span class="line">|     SSL2_RC4_64_WITH_MD5</span><br><span class="line">|     SSL2_DES_192_EDE3_CBC_WITH_MD5</span><br><span class="line">|     SSL2_RC2_128_CBC_WITH_MD5</span><br><span class="line">|     SSL2_IDEA_128_CBC_WITH_MD5</span><br><span class="line">|     SSL2_DES_64_CBC_WITH_MD5</span><br><span class="line">|     SSL2_RC4_128_WITH_MD5</span><br><span class="line">|_    SSL2_RC2_128_CBC_EXPORT40_WITH_MD5</span><br><span class="line">| ssl-cert: Subject: commonName=www.badstore.net/organizationName=BadStore.net/stateOrProvinceName=Illinois/countryName=US</span><br><span class="line">| Subject Alternative Name: email:root@badstore.net</span><br><span class="line">| Not valid before: 2006-05-10T12:52:53</span><br><span class="line">|_Not valid after:  2009-02-02T12:52:53</span><br><span class="line">|_http-server-header: Apache/1.3.28 (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c</span><br><span class="line">|_ssl-date: 2024-02-20T12:53:57+00:00; -1d01h58m15s from scanner time.</span><br><span class="line">|_http-title: Welcome to BadStore.net v1.2.3s</span><br><span class="line">| http-robots.txt: 5 disallowed entries </span><br><span class="line">|_/cgi-bin /scanbot /backup /supplier /upload</span><br><span class="line">| http-methods: </span><br><span class="line">|_  Potentially risky methods: TRACE</span><br><span class="line">3306/tcp open  mysql    MySQL 4.1.7-standard</span><br><span class="line">| mysql-info: </span><br><span class="line">|   Protocol: 10</span><br><span class="line">|   Version: 4.1.7-standard</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="shiki shell"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #005CC5">...</span></span>
+<span class="line"><span style="color: #6F42C1">PORT</span><span style="color: #24292E">     </span><span style="color: #032F62">STATE</span><span style="color: #24292E"> </span><span style="color: #032F62">SERVICE</span><span style="color: #24292E">  </span><span style="color: #032F62">VERSION</span></span>
+<span class="line"><span style="color: #6F42C1">80/tcp</span><span style="color: #24292E">   </span><span style="color: #032F62">open</span><span style="color: #24292E">  </span><span style="color: #032F62">http</span><span style="color: #24292E">     </span><span style="color: #032F62">Apache</span><span style="color: #24292E"> </span><span style="color: #032F62">httpd</span><span style="color: #24292E"> </span><span style="color: #005CC5">1.3</span><span style="color: #032F62">.28</span><span style="color: #24292E"> ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">http-robots.txt:</span><span style="color: #24292E"> </span><span style="color: #005CC5">5</span><span style="color: #24292E"> </span><span style="color: #032F62">disallowed</span><span style="color: #24292E"> </span><span style="color: #032F62">entries</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_/cgi-bin</span><span style="color: #24292E"> </span><span style="color: #032F62">/scanbot</span><span style="color: #24292E"> </span><span style="color: #032F62">/backup</span><span style="color: #24292E"> </span><span style="color: #032F62">/supplier</span><span style="color: #24292E"> </span><span style="color: #032F62">/upload</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_http-server-header:</span><span style="color: #24292E"> </span><span style="color: #032F62">Apache/1.3.28</span><span style="color: #24292E"> (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_http-title:</span><span style="color: #24292E"> </span><span style="color: #032F62">Welcome</span><span style="color: #24292E"> </span><span style="color: #032F62">to</span><span style="color: #24292E"> </span><span style="color: #032F62">BadStore.net</span><span style="color: #24292E"> </span><span style="color: #032F62">v1.2.3s</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">http-methods:</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_</span><span style="color: #24292E">  </span><span style="color: #032F62">Potentially</span><span style="color: #24292E"> </span><span style="color: #032F62">risky</span><span style="color: #24292E"> </span><span style="color: #032F62">methods:</span><span style="color: #24292E"> </span><span style="color: #032F62">TRACE</span></span>
+<span class="line"><span style="color: #6F42C1">443/tcp</span><span style="color: #24292E">  </span><span style="color: #032F62">open</span><span style="color: #24292E">  </span><span style="color: #032F62">ssl/http</span><span style="color: #24292E"> </span><span style="color: #032F62">Apache</span><span style="color: #24292E"> </span><span style="color: #032F62">httpd</span><span style="color: #24292E"> </span><span style="color: #005CC5">1.3</span><span style="color: #032F62">.28</span><span style="color: #24292E"> ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">sslv2:</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">   </span><span style="color: #6F42C1">SSLv2</span><span style="color: #24292E"> </span><span style="color: #032F62">supported</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">   </span><span style="color: #6F42C1">ciphers:</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_RC4_128_EXPORT40_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_RC4_64_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_DES_192_EDE3_CBC_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_RC2_128_CBC_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_IDEA_128_CBC_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_DES_64_CBC_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">     </span><span style="color: #6F42C1">SSL2_RC4_128_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_</span><span style="color: #24292E">    </span><span style="color: #032F62">SSL2_RC2_128_CBC_EXPORT40_WITH_MD5</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ssl-cert:</span><span style="color: #24292E"> </span><span style="color: #032F62">Subject:</span><span style="color: #24292E"> </span><span style="color: #032F62">commonName=www.badstore.net/organizationName=BadStore.net/stateOrProvinceName=Illinois/countryName=US</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Subject</span><span style="color: #24292E"> </span><span style="color: #032F62">Alternative</span><span style="color: #24292E"> </span><span style="color: #032F62">Name:</span><span style="color: #24292E"> </span><span style="color: #032F62">email:root@badstore.net</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Not</span><span style="color: #24292E"> </span><span style="color: #032F62">valid</span><span style="color: #24292E"> </span><span style="color: #032F62">before:</span><span style="color: #24292E"> </span><span style="color: #005CC5">2006</span><span style="color: #032F62">-05-10T12:52:53</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_Not</span><span style="color: #24292E"> </span><span style="color: #032F62">valid</span><span style="color: #24292E"> </span><span style="color: #032F62">after:</span><span style="color: #24292E">  </span><span style="color: #005CC5">2009</span><span style="color: #032F62">-02-02T12:52:53</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_http-server-header:</span><span style="color: #24292E"> </span><span style="color: #032F62">Apache/1.3.28</span><span style="color: #24292E"> (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_ssl-date:</span><span style="color: #24292E"> </span><span style="color: #005CC5">2024</span><span style="color: #032F62">-02-20T12:53:57+00:00</span><span style="color: #24292E">; </span><span style="color: #6F42C1">-1d01h58m15s</span><span style="color: #24292E"> </span><span style="color: #032F62">from</span><span style="color: #24292E"> </span><span style="color: #032F62">scanner</span><span style="color: #24292E"> </span><span style="color: #032F62">time.</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_http-title:</span><span style="color: #24292E"> </span><span style="color: #032F62">Welcome</span><span style="color: #24292E"> </span><span style="color: #032F62">to</span><span style="color: #24292E"> </span><span style="color: #032F62">BadStore.net</span><span style="color: #24292E"> </span><span style="color: #032F62">v1.2.3s</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">http-robots.txt:</span><span style="color: #24292E"> </span><span style="color: #005CC5">5</span><span style="color: #24292E"> </span><span style="color: #032F62">disallowed</span><span style="color: #24292E"> </span><span style="color: #032F62">entries</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_/cgi-bin</span><span style="color: #24292E"> </span><span style="color: #032F62">/scanbot</span><span style="color: #24292E"> </span><span style="color: #032F62">/backup</span><span style="color: #24292E"> </span><span style="color: #032F62">/supplier</span><span style="color: #24292E"> </span><span style="color: #032F62">/upload</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">http-methods:</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #6F42C1">_</span><span style="color: #24292E">  </span><span style="color: #032F62">Potentially</span><span style="color: #24292E"> </span><span style="color: #032F62">risky</span><span style="color: #24292E"> </span><span style="color: #032F62">methods:</span><span style="color: #24292E"> </span><span style="color: #032F62">TRACE</span></span>
+<span class="line"><span style="color: #6F42C1">3306/tcp</span><span style="color: #24292E"> </span><span style="color: #032F62">open</span><span style="color: #24292E">  </span><span style="color: #032F62">mysql</span><span style="color: #24292E">    </span><span style="color: #032F62">MySQL</span><span style="color: #24292E"> </span><span style="color: #005CC5">4.1</span><span style="color: #032F62">.7-standard</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #6F42C1">mysql-info:</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">   </span><span style="color: #6F42C1">Protocol:</span><span style="color: #24292E"> </span><span style="color: #005CC5">10</span></span>
+<span class="line"><span style="color: #D73A49">|</span><span style="color: #24292E">   </span><span style="color: #6F42C1">Version:</span><span style="color: #24292E"> </span><span style="color: #005CC5">4.1</span><span style="color: #032F62">.7-standard</span></span>
+<span class="line"><span style="color: #005CC5">...</span></span></code></pre></div></div></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mysql -h &lt;IP&gt; -u root -p</span></span><br></pre></td></tr></table></figure>
+<figure class="shiki shell"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">$</span><span style="color: #24292E"> </span><span style="color: #032F62">mysql</span><span style="color: #24292E"> </span><span style="color: #005CC5">-h</span><span style="color: #24292E"> </span><span style="color: #D73A49">&lt;</span><span style="color: #032F62">I</span><span style="color: #24292E">P</span><span style="color: #D73A49">&gt;</span><span style="color: #24292E"> </span><span style="color: #005CC5">-u</span><span style="color: #24292E"> </span><span style="color: #032F62">root</span><span style="color: #24292E"> </span><span style="color: #005CC5">-p</span></span></code></pre></div></div></figure>
 
 <p>From this exposed Database we are able to obtain:</p>
 <p><img src="https://pbs.twimg.com/media/GK7ASVmaoAAYv1R?format=png&name=medium" alt="Successfully Accessed The Database."></p>
@@ -401,7 +439,7 @@
     
 <nav id="article-nav">
     
-        <a href="/wiki/Programming/Framework/VueJS/1-fundamental-topics/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/wiki/Programming/VueJS/1-fundamental-topics/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
@@ -437,15 +475,15 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            Aritlh &copy; 2024 
+            Modder by Aritlh &copy; 2024 
             <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
-            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
-            
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten.</a>
+            <!-- 
                 <br>
                 <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
                 &nbsp;|&nbsp;
                 <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
-            
+             -->
         </div>
     </div>
 </footer>
@@ -517,5 +555,28 @@
 
 
     </div>
-</body>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: false,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.25 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
 </html>

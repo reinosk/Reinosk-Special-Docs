@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/Framework/VueJS/1-fundamental-topics/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/1-fundamental-topics/</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -74,14 +74,14 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Technology-Development/</loc>
+    <loc>http://aritlh.github.io/categories/Programming/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Programming/</loc>
+    <loc>http://aritlh.github.io/categories/Technology-Development/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -95,21 +95,14 @@
   </url>
   
   <url>
+    <loc>http://aritlh.github.io/categories/Programming/VueJS/</loc>
+    <lastmod>2024-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://aritlh.github.io/categories/Technology-Development/Git/</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/categories/Programming/Framework/</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/categories/Programming/Framework/VueJS/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

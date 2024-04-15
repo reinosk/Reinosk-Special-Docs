@@ -68,7 +68,18 @@
     
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-<meta name="generator" content="Hexo 7.1.1"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#90a4ae;--hl-bg:#f6f8fa;--hltools-bg:#e6ebf1;--hltools-color:#90a4ae;--hlnumber-bg:#f6f8fa;--hlnumber-color:rgba(144,164,174,0.5);--hlscrollbar-bg:#dce4eb;--hlexpand-bg:linear-gradient(180deg,rgba(246,248,250,0.1),rgba(246,248,250,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
     <div id="container">
@@ -203,18 +214,9 @@
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder"></i>
                             &nbsp;
-                            Framework
-                        </a>
-                         <ul class="unstyled" id="tree"> 
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
                             VueJS
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/Framework/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  </ul> 
-                    </li> 
-                     </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -366,7 +368,12 @@
             <p>When using git to commit a version, the commit message is very important, as you need to be able to look back at the commit log and see what was changed each time.</p>
 <p>When we write this commit message, we should follow a certain structure to help us standardize and clarify our thinking.</p>
 <p>We generally follow the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/thoughtbot/dotfiles/blob/master/gitmessage"><strong>thoughtbot specification</strong></a>, and here are their instructions <a target="_blank" rel="external nofollow noopener noreferrer" href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">5 Useful Tips For A Better Commit Message</a>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">50-character subject line</span><br><span class="line">72-character wrapped longer description. This should answer.</span><br><span class="line">* Why was this change necessary?</span><br><span class="line">* Why was this change necessary? * How does it address the problem?</span><br><span class="line">* How does it address the problem? * Are there any side effects?</span><br><span class="line">Include a <span class="built_in">link</span> to the ticket, <span class="keyword">if</span> any.</span><br></pre></td></tr></table></figure>
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">50-character</span><span style="color: #24292E"> </span><span style="color: #032F62">subject</span><span style="color: #24292E"> </span><span style="color: #032F62">line</span></span>
+<span class="line"><span style="color: #6F42C1">72-character</span><span style="color: #24292E"> </span><span style="color: #032F62">wrapped</span><span style="color: #24292E"> </span><span style="color: #032F62">longer</span><span style="color: #24292E"> </span><span style="color: #032F62">description.</span><span style="color: #24292E"> </span><span style="color: #032F62">This</span><span style="color: #24292E"> </span><span style="color: #032F62">should</span><span style="color: #24292E"> </span><span style="color: #032F62">answer.</span></span>
+<span class="line"><span style="color: #D73A49">*</span><span style="color: #24292E"> Why was this change necessary</span><span style="color: #D73A49">?</span></span>
+<span class="line"><span style="color: #D73A49">*</span><span style="color: #24292E"> Why was this change necessary</span><span style="color: #D73A49">?</span><span style="color: #24292E"> </span><span style="color: #D73A49">*</span><span style="color: #24292E"> How does it address the problem</span><span style="color: #D73A49">?</span></span>
+<span class="line"><span style="color: #D73A49">*</span><span style="color: #24292E"> How does it address the problem</span><span style="color: #D73A49">?</span><span style="color: #24292E"> </span><span style="color: #D73A49">*</span><span style="color: #24292E"> Are there any side effects</span><span style="color: #D73A49">?</span></span>
+<span class="line"><span style="color: #6F42C1">Include</span><span style="color: #24292E"> </span><span style="color: #032F62">a</span><span style="color: #24292E"> </span><span style="color: #032F62">link</span><span style="color: #24292E"> </span><span style="color: #032F62">to</span><span style="color: #24292E"> </span><span style="color: #032F62">the</span><span style="color: #24292E"> </span><span style="color: #032F62">ticket,</span><span style="color: #24292E"> </span><span style="color: #032F62">if</span><span style="color: #24292E"> </span><span style="color: #032F62">any.</span></span></code></pre></div></div></figure>
 
 <p>Simply put:</p>
 <ol>
@@ -382,7 +389,14 @@
 <li>After the descriptive message, either leave a blank line and close the issue or give a link to the appropriate ticket.</li>
 </ol>
 <p>Example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fix(<span class="variable">$compile</span>): couple of unit tests <span class="keyword">for</span> IE9</span><br><span class="line"></span><br><span class="line">1. Older IEs serialize html uppercased, but IE9 does not...</span><br><span class="line">2. would be better to expect <span class="keyword">case</span> insensitive, unfortunately jasmine does</span><br><span class="line">3. not allow to user regexps <span class="keyword">for</span> throw expectations</span><br><span class="line"></span><br><span class="line">Closes <span class="comment">#392</span></span><br><span class="line">Breaks foo.bar api, foo.baz should be used instead</span><br></pre></td></tr></table></figure>
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">fix($compile</span><span style="color: #24292E">): couple of unit tests </span><span style="color: #D73A49">for</span><span style="color: #24292E"> IE9</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6F42C1">1.</span><span style="color: #24292E"> </span><span style="color: #032F62">Older</span><span style="color: #24292E"> </span><span style="color: #032F62">IEs</span><span style="color: #24292E"> </span><span style="color: #032F62">serialize</span><span style="color: #24292E"> </span><span style="color: #032F62">html</span><span style="color: #24292E"> </span><span style="color: #032F62">uppercased,</span><span style="color: #24292E"> </span><span style="color: #032F62">but</span><span style="color: #24292E"> </span><span style="color: #032F62">IE9</span><span style="color: #24292E"> </span><span style="color: #032F62">does</span><span style="color: #24292E"> </span><span style="color: #032F62">not...</span></span>
+<span class="line"><span style="color: #6F42C1">2.</span><span style="color: #24292E"> </span><span style="color: #032F62">would</span><span style="color: #24292E"> </span><span style="color: #032F62">be</span><span style="color: #24292E"> </span><span style="color: #032F62">better</span><span style="color: #24292E"> </span><span style="color: #032F62">to</span><span style="color: #24292E"> </span><span style="color: #032F62">expect</span><span style="color: #24292E"> </span><span style="color: #032F62">case</span><span style="color: #24292E"> </span><span style="color: #032F62">insensitive,</span><span style="color: #24292E"> </span><span style="color: #032F62">unfortunately</span><span style="color: #24292E"> </span><span style="color: #032F62">jasmine</span><span style="color: #24292E"> </span><span style="color: #032F62">does</span></span>
+<span class="line"><span style="color: #6F42C1">3.</span><span style="color: #24292E"> </span><span style="color: #032F62">not</span><span style="color: #24292E"> </span><span style="color: #032F62">allow</span><span style="color: #24292E"> </span><span style="color: #032F62">to</span><span style="color: #24292E"> </span><span style="color: #032F62">user</span><span style="color: #24292E"> </span><span style="color: #032F62">regexps</span><span style="color: #24292E"> </span><span style="color: #032F62">for</span><span style="color: #24292E"> </span><span style="color: #032F62">throw</span><span style="color: #24292E"> </span><span style="color: #032F62">expectations</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6F42C1">Closes</span><span style="color: #24292E"> </span><span style="color: #6A737D">#392</span></span>
+<span class="line"><span style="color: #6F42C1">Breaks</span><span style="color: #24292E"> </span><span style="color: #032F62">foo.bar</span><span style="color: #24292E"> </span><span style="color: #032F62">api,</span><span style="color: #24292E"> </span><span style="color: #032F62">foo.baz</span><span style="color: #24292E"> </span><span style="color: #032F62">should</span><span style="color: #24292E"> </span><span style="color: #032F62">be</span><span style="color: #24292E"> </span><span style="color: #032F62">used</span><span style="color: #24292E"> </span><span style="color: #032F62">instead</span></span></code></pre></div></div></figure>
             </div>
         
         <footer class="article-footer">
@@ -430,15 +444,15 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            Aritlh &copy; 2024 
+            Modder by Aritlh &copy; 2024 
             <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
-            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
-            
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten.</a>
+            <!-- 
                 <br>
                 <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
                 &nbsp;|&nbsp;
                 <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
-            
+             -->
         </div>
     </div>
 </footer>
@@ -510,5 +524,28 @@
 
 
     </div>
-</body>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: false,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.25 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
 </html>
