@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/2-app-configurations/</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://aritlh.github.io/about/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>

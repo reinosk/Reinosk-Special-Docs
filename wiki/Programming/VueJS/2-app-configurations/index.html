@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>VueJS #2 App Configurations | Aritlh&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="VueJS #2 App Configurations">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Every application instance exposes a config object that contains the configuration settings for that application. You can modify its properties before mounting your application. Application APICreateA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VueJS #2 App Configurations">
+<meta property="og:url" content="http://aritlh.github.io/wiki/Programming/VueJS/2-app-configurations/index.html">
+<meta property="og:site_name" content="Aritlh&#39;s Wiki">
+<meta property="og:description" content="Every application instance exposes a config object that contains the configuration settings for that application. You can modify its properties before mounting your application. Application APICreateA">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-15T21:00:21.000Z">
+<meta property="article:modified_time" content="2024-04-15T21:26:06.837Z">
+<meta property="article:author" content="Aritlh">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Aritlh&#39;s Wiki" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/kitsune.png">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#90a4ae;--hl-bg:#f6f8fa;--hltools-bg:#e6ebf1;--hltools-color:#90a4ae;--hlnumber-bg:#f6f8fa;--hlnumber-color:rgba(144,164,174,0.5);--hlscrollbar-bg:#dce4eb;--hlexpand-bg:linear-gradient(180deg,rgba(246,248,250,0.1),rgba(246,248,250,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Aritlh&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hacking Walkthrough
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Vulnhub
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Hacking%20Walkthrough/Vulnhub/badstore-v123/">Badstore v1.2.3</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Programming
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            VueJS
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file active"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Technology Development
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Git
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/">Git commit message 基本规范</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome Aritlh's Wiki Site</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Programming/VueJS/2-app-configurations" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/Programming/VueJS/2-app-configurations/">
+            <time datetime="2024-04-15T21:00:21.000Z" itemprop="datePublished">2024-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/aritlh/aritlh.github.io/raw/master/source/_posts/Programming/VueJS/2-app-configurations.md"> Source </a>
+                            </div>
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/edit/master/source/_posts/Programming/VueJS/2-app-configurations.md'> Edit </a>
+                            </div> -->
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/commits/master/source/_posts/Programming/VueJS/2-app-configurations.md'> History </a>
+                            </div> -->
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            VueJS #2 App Configurations
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Application-API"><span class="toc-number">1.</span> <span class="toc-text">Application API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CreateApp"><span class="toc-number">1.1.</span> <span class="toc-text">CreateApp()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#createSSRApp"><span class="toc-number">1.2.</span> <span class="toc-text">createSSRApp()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-mount"><span class="toc-number">1.3.</span> <span class="toc-text">app.mount()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-unmount"><span class="toc-number">1.4.</span> <span class="toc-text">app.unmount()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-component"><span class="toc-number">1.5.</span> <span class="toc-text">app.component()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-directive"><span class="toc-number">1.6.</span> <span class="toc-text">app.directive()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-use"><span class="toc-number">1.7.</span> <span class="toc-text">app.use()</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <p>Every application instance exposes a <code>config</code> object that contains the configuration settings for that application. You can modify its properties before mounting your application.</p>
+<h2 id="Application-API"><a href="#Application-API" class="headerlink" title="Application API"></a>Application API</h2><h3 id="CreateApp"><a href="#CreateApp" class="headerlink" title="CreateApp()"></a>CreateApp()</h3><p>Creates an application instance.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">(</span><span style="color: #E36209">rootComponent</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Component</span><span style="color: #24292E">, </span><span style="color: #E36209">rootProps</span><span style="color: #D73A49">?:</span><span style="color: #24292E"> </span><span style="color: #005CC5">object</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>The first argument is the root component. The second optional argument is the props to be passed to the root component.</p>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<p>With inline root component:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">({</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* root component options */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span></code></pre></div></div></figure>
+
+<p>With imported component:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> App </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;./App.vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">(App)</span></span></code></pre></div></div></figure>
+
+<h3 id="createSSRApp"><a href="#createSSRApp" class="headerlink" title="createSSRApp()"></a>createSSRApp()</h3><p>​Creates an application instance in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr#client-hydration">SSR Hydration</a> mode. Usage is exactly the same as <code>createApp()</code>.</p>
+<h3 id="app-mount"><a href="#app-mount" class="headerlink" title="app.mount()"></a>app.mount()</h3><p>​Mounts the application instance in a container element.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mount</span><span style="color: #24292E">(</span><span style="color: #E36209">rootContainer</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Element</span><span style="color: #24292E"> </span><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #005CC5">string</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentPublicInstance</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>The argument can either be an actual DOM element or a CSS selector (the first matched element will be used). Returns the root component instance.</p>
+<p>If the component has a template or a render function defined, it will replace any existing DOM nodes inside the container. Otherwise, if the runtime compiler is available, the <code>innerHTML</code> of the container will be used as the template.</p>
+<p>In SSR hydration mode, it will hydrate the existing DOM nodes inside the container. If there are <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr#hydration-mismatch">mismatches</a>, the existing DOM nodes will be morphed to match the expected output.</p>
+<p>For each app instance, <code>mount()</code> can only be called once.</p>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">(</span><span style="color: #6A737D">/* ... */</span><span style="color: #24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">mount</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;#app&#39;</span><span style="color: #24292E">)</span></span></code></pre></div></div></figure>
+
+<p>Can also mount to an actual DOM element:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">mount</span><span style="color: #24292E">(document.body.firstChild)</span></span></code></pre></div></div></figure>
+
+<h3 id="app-unmount"><a href="#app-unmount" class="headerlink" title="app.unmount()"></a>app.unmount()</h3><p>​Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application’s component tree.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">unmount</span><span style="color: #24292E">()</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<h3 id="app-component"><a href="#app-component" class="headerlink" title="app.component()"></a>app.component()</h3><p>​Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">component</span><span style="color: #24292E">(</span><span style="color: #E36209">name</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">string</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Component</span><span style="color: #24292E"> </span><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #005CC5">undefined</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">component</span><span style="color: #24292E">(</span><span style="color: #E36209">name</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">string</span><span style="color: #24292E">, </span><span style="color: #E36209">component</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Component</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">({})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// register an options object</span></span>
+<span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">component</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;my-component&#39;</span><span style="color: #24292E">, {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// retrieve a registered component</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">MyComponent</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> app.</span><span style="color: #6F42C1">component</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;my-component&#39;</span><span style="color: #24292E">)</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/components/registration">Component Registration</a></li>
+</ul>
+<h3 id="app-directive"><a href="#app-directive" class="headerlink" title="app.directive()"></a>app.directive()</h3><p>Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">directive</span><span style="color: #24292E">(</span><span style="color: #E36209">name</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">string</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Directive</span><span style="color: #24292E"> </span><span style="color: #D73A49">|</span><span style="color: #24292E"> </span><span style="color: #005CC5">undefined</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">directive</span><span style="color: #24292E">(</span><span style="color: #E36209">name</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">string</span><span style="color: #24292E">, </span><span style="color: #E36209">directive</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Directive</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">({</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// register (object directive)</span></span>
+<span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">directive</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;my-directive&#39;</span><span style="color: #24292E">, {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* custom directive hooks */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// register (function directive shorthand)</span></span>
+<span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">directive</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;my-directive&#39;</span><span style="color: #24292E">, () </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">// retrieve a registered directive</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">myDirective</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> app.</span><span style="color: #6F42C1">directive</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;my-directive&#39;</span><span style="color: #24292E">)</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/custom-directives">Custom Directives</a></li>
+</ul>
+<h3 id="app-use"><a href="#app-use" class="headerlink" title="app.use()"></a>app.use()</h3><p>​Installs a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">plugin</a>.</p>
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">App</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">use</span><span style="color: #24292E">(</span><span style="color: #E36209">plugin</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Plugin</span><span style="color: #24292E">, </span><span style="color: #D73A49">...</span><span style="color: #E36209">options</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">any</span><span style="color: #24292E">[])</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>Expects the plugin as the first argument, and optional plugin options as the second argument.</p>
+<p>The plugin can either be an object with an <code>install()</code> method, or just a function that will be used as the <code>install()</code> method. The options (second argument of <code>app.use()</code>) will be passed along to the plugin’s <code>install()</code> method.</p>
+<p>When <code>app.use()</code> is called on the same plugin multiple times, the plugin will be installed only once.</p>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> MyPlugin </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;./plugins/MyPlugin&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">({</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">use</span><span style="color: #24292E">(MyPlugin)</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">Plugins</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/wiki/Programming/VueJS/1-fundamental-topics/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">VueJS #1 Fundamental Topics</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Modified by Aritlh &copy; 2024 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten.</a>
+            <!-- 
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+             -->
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: false,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copied!',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.25 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

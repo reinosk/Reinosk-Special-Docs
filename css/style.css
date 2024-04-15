@@ -131,7 +131,7 @@ a:visited {
 code {
   margin: 0 2px;
   color: #e96900;
-  padding: 0px 4px;
+  padding: auto;
   font-size: 0.9em;
   border-radius: 2px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
@@ -170,7 +170,7 @@ code {
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
-  background-image: url("https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/aritlh.png");
+  background-image: url("https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/kitsune.png");
   background-size: 40px 40px;
 }
 #container {
