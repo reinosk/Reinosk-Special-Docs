@@ -52,17 +52,19 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
+syntax_highlighter:
 highlight:
+  enable: false
   line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
+  # auto_detect: false
+  # tab_replace: ''
+  # wrap: true
   hljs: false
 prismjs:
-  preprocess: true
-  line_number: true
-  tab_replace: ''
+  enable: false
+  # preprocess: true
+  # line_number: true
+  # tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -146,3 +148,16 @@ nofollow:
   enable: true
   exclude:
     - arilth.github.io # eg: zthxxx.me
+
+shiki:
+  theme: github-light # highlight-theme
+  line_number: true # whether to show the line_number
+  beautify: true # whether to add highlight tool true or false
+  highlight_copy: true # copy button
+  highlight_lang: false # show the code language
+  highlight_height_limit: 360 # code-block max height,unit: px
+  is_highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+  copy: # copy message
+    success: "Copy Success"
+    error: "Copy Error"
+    no_support: "Browser Not Support"
