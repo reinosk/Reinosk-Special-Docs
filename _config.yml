@@ -172,3 +172,8 @@ hexo_pro:
   password: 123
   avatar: https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/aritlh.png
   secret: xxx // jwt secret key
+
+live_reload:
+  delay: 0
+  info: true
+  retry: 3000

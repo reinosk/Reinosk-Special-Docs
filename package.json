@@ -32,5 +32,8 @@
     "hexo-server": "^3.0.0",
     "hexo-shiki-plugin": "^1.0.25",
     "hexo-theme-landscape": "^1.0.0"
+  },
+  "devDependencies": {
+    "hexo-server-live": "^0.2.12"
   }
 }
