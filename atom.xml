@@ -37,4 +37,32 @@
     
   </entry>
   
+  <entry>
+    <title>Git commit message 基本规范</title>
+    <link href="http://example.com/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/"/>
+    <id>http://example.com/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/</id>
+    <published>2017-01-22T21:14:54.000Z</published>
+    <updated>2024-04-15T07:07:38.590Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 git 提交版本时，commit message 很重要，在回顾 commit log 时需要清晰的知道每次改动是什么。</p><p>在我们写这个提交信息（commit message）时，应该遵守一定书写结构，帮助我们统一规范和理清思路。</p><p>一般遵守 <a href="https://github.com/thoughtbot/dotfiles/blob/master/gitmessage"><strong>thoughtbot 规范</strong></a>，这里有他们的详细说明 <a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">5 Useful Tips For A Better Commit Message</a>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">50-character subject line</span><br><span class="line"></span><br><span class="line">72-character wrapped longer description. This should answer:</span><br><span class="line"></span><br><span class="line">* Why was this change necessary?</span><br><span class="line">* How does it address the problem?</span><br><span class="line">* Are there any side effects?</span><br><span class="line"></span><br><span class="line">Include a <span class="built_in">link</span> to the ticket, <span class="keyword">if</span> any.</span><br></pre></td></tr></table></figure><p>简单的说就是：</p><ol><li>第一行不超过 50 个字符</li><li>第二行空一行</li><li>第三行开始是描述信息，每行长度不超过 72 个字符，有序号，结尾无句号</li><li>第三行开始的描述信息主要说明：<ul><li>这个提交有什么改动？</li><li>如何解决的问题？</li><li>会对哪方面产生影响吗？</li></ul></li><li>描述信息完后空一行，close issue 或者给个相应 ticket 的链接</li></ol><p>Example:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fix(<span class="variable">$compile</span>): couple of unit tests <span class="keyword">for</span> IE9</span><br><span class="line"> </span><br><span class="line">1. Older IEs serialize html uppercased, but IE9 does not...</span><br><span class="line">2. Would be better to expect <span class="keyword">case</span> insensitive, unfortunately jasmine does</span><br><span class="line">3. not allow to user regexps <span class="keyword">for</span> throw expectations</span><br><span class="line"> </span><br><span class="line">Closes <span class="comment">#392</span></span><br><span class="line">Breaks foo.bar api, foo.baz should be used instead</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;使用 git 提交版本时，commit message 很重要，在回顾 commit log 时需要清晰的知道每次改动是什么。&lt;/p&gt;
+&lt;p&gt;在我们写这个提交信息（commit message）时，应该遵守一定书写结构，帮助我们统一规范和理清思路。&lt;/p&gt;
+&lt;p&gt;一般遵守 </summary>
+      
+    
+    
+    
+    <category term="Technology Development" scheme="http://example.com/categories/Technology-Development/"/>
+    
+    <category term="Git" scheme="http://example.com/categories/Technology-Development/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
 </feed>
