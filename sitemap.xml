@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/Framework/VueJS/1-fundamental-topics/</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://aritlh.github.io/wiki/Hacking%20Walkthrough/Vulnhub/badstore-v123/</loc>
     
     <lastmod>2024-04-15</lastmod>
@@ -20,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/index/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/Framework/VueJS/1-fundamental-topics/</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -30,6 +21,15 @@
   
   <url>
     <loc>http://aritlh.github.io/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://aritlh.github.io/wiki/index/</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -72,27 +72,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>http://aritlh.github.io/tags/Vulnhub/</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/tags/Git/</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/tags/VueJS/</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 
   
