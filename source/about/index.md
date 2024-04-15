@@ -14,6 +14,7 @@ As for coding languages, JavaScript and TypeScript are right up my street. JS is
 I've also got a bit of Python under my belt, even though I'm not an expert or anything. Dead handy language for data analysis, web apps, AI, you name it.
 
 And then there's Rust - a systems programming language that's bloody brilliant when it comes to security and performance. Ideal for operating systems, device drivers, low-level system apps and the like.
+
 I'm well chuffed to keep learning and trying out new tech. Coding's my passion, innit? Hopefully, I can make a decent contribution to the programming world and keep the cyber security lot on their toes.
 
-![Hello?](https://w.wallhaven.cc/full/e4/wallhaven-e43634.png)
+![YUKI. N> READY?](https://w.wallhaven.cc/full/e4/wallhaven-e43634.png)
