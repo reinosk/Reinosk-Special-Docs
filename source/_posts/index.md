@@ -1,5 +1,6 @@
 ---
 title: Welcome Aritlh's Wiki Site
+date: 2017-01-23 04:14:54
 ---
 
 This is Aritlh's personal Wiki site, mainly recording some scattered knowledge points summarized from his own words.
@@ -9,11 +10,8 @@ I've always felt that **knowledge should not be fragmented, but structured**. So
 I have learned about or tried methods such as OneNote, Evernote, Blogs, Wikis, etc. and summarized a set of processes for knowledge acquisition, absorption, and management that I think is relatively reasonable:
 
 1. Use web pages, RSS, WeChat, and other online channels as sources of knowledge acquisition.
-
 2. Use a note-taking system (handwritten notes, OneNote, Evernote) to initially filter valuable and targeted information, **bookmark** information, **classify and organize** it, and take notes on the **key points** after reading.
-
 3. For the occasional one or two sentences, or very scattered ideas, inspirations, and initially digested content that come to mind, record them in a **Wiki**.
-
 4. Finally, when there is a certain amount of content in a section of the Wiki, re-read the notes and content in that section of the Wiki, refine and distill them, add your own thoughts and understanding, and write an article to be published on a **blog**.
 
 In practice, the **note-taking system** is mainly for **classifying and organizing** large chunks of information, the **Wiki** is mainly for **accumulating** scattered knowledge, and the **blog** is only for the **essence**.
