@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Aritlh&#39;s Wiki</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://aritlh.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2024-04-15T07:00:05.974Z</updated>
-  <id>http://example.com/</id>
+  <link href="http://aritlh.github.io/"/>
+  <updated>2024-04-15T07:54:39.287Z</updated>
+  <id>http://aritlh.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Aritlh</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Welcome Aritlh&#39;s Wiki Site</title>
-    <link href="http://example.com/wiki/index/"/>
-    <id>http://example.com/wiki/index/</id>
-    <published>2024-04-15T07:00:05.974Z</published>
-    <updated>2024-04-15T07:00:05.974Z</updated>
+    <title>Git commit message 基本规范</title>
+    <link href="http://aritlh.github.io/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/"/>
+    <id>http://aritlh.github.io/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/</id>
+    <published>2019-02-11T21:14:54.000Z</published>
+    <updated>2024-04-15T07:54:39.287Z</updated>
     
-    <content type="html"><![CDATA[<p>This is Aritlh’s personal Wiki site, mainly recording some scattered knowledge points summarized from his own words.</p><p>I’ve always felt that <strong>knowledge should not be fragmented, but structured</strong>. So I hope to find an elegant way to manage my knowledge.</p><p>I have learned about or tried methods such as OneNote, Evernote, Blogs, Wikis, etc. and summarized a set of processes for knowledge acquisition, absorption, and management that I think is relatively reasonable:</p><ol><li><p>Use web pages, RSS, WeChat, and other online channels as sources of knowledge acquisition.</p></li><li><p>Use a note-taking system (handwritten notes, OneNote, Evernote) to initially filter valuable and targeted information, <strong>bookmark</strong> information, <strong>classify and organize</strong> it, and take notes on the <strong>key points</strong> after reading.</p></li><li><p>For the occasional one or two sentences, or very scattered ideas, inspirations, and initially digested content that come to mind, record them in a <strong>Wiki</strong>.</p></li><li><p>Finally, when there is a certain amount of content in a section of the Wiki, re-read the notes and content in that section of the Wiki, refine and distill them, add your own thoughts and understanding, and write an article to be published on a <strong>blog</strong>.</p></li></ol><p>In practice, the <strong>note-taking system</strong> is mainly for <strong>classifying and organizing</strong> large chunks of information, the <strong>Wiki</strong> is mainly for <strong>accumulating</strong> scattered knowledge, and the <strong>blog</strong> is only for the <strong>essence</strong>.</p><p>When a section of the Wiki is first created, there may be very little content or just a sentence. But through this process, as you encounter more and more about that topic, the scattered knowledge also increases, and the content recorded in that section of the Wiki will also increase, which is to <strong>structure and organize what was originally a large amount of fragmented knowledge through accumulation</strong>.</p><p>The purpose of the blog is to <strong>share and showcase</strong> your knowledge and demonstrate your level of expertise. It needs to present something substantial, so it is not suitable for scattered snippets of knowledge. It is more suitable for presenting a <strong>series</strong> of summaries or tutorials, as a highly systematic knowledge platform.</p><p>When I tried to deploy my own Wiki system, I started to struggle with choosing which Wiki system to use. Referring to online blogs, I actually deployed and compared several popular Wiki systems: MediaWiki, DokuWiki, MDwiki, TiddlyWiki, wiz, vimwiki, Simiki, Wikitten, etc. None of them were satisfactory. Some were difficult and complex to deploy, some had ugly interfaces, some couldn’t have nested categories, some nested categories couldn’t be expanded, some couldn’t search, and some even didn’t use Markdown…</p><p>Based on these unsatisfactory user experiences, I summarized some of my requirements for a <strong>personal Wiki</strong>:</p><ul><li>Simple and beautiful interface with a friendly font and layout</li><li>Support for multi-level categorization</li><li>Easy to modify and update content</li><li>Simple deployment</li><li>Category directories can be expanded and collapsed</li><li>When a category is expanded, you can view the titles of all articles&#x2F;entries under that category</li><li>Each article&#x2F;entry can be assigned multiple categories&#x2F;tags</li><li>The Wiki should support internal linking</li><li>Use Markdown to write articles&#x2F;entries</li><li>Support full-text search (searchable content and titles)</li></ul><p>In my previous usage, Wikitten was the closest to my needs, but there were still some conditions that were not met, such as deployment and search. But personally, I liked the style of Wikitten.</p><p>So in the end, I chose to mimic the style of Wikitten and write this Hexo-based Wiki theme hexo-theme-Wikitten as my own Wiki system, which basically implements the above requirements. Now I’m using it for myself for the time being, of course, this initial functionality is still very simple, and there is a bunch of bugs and TODO lists that need to be maintained. I welcome anyone interested to submit PRs.</p>]]></content>
+    <content type="html"><![CDATA[<p>When using git to commit a version, the commit message is very important, as you need to be able to look back at the commit log and see what was changed each time.</p><p>When we write this commit message, we should follow a certain structure to help us standardize and clarify our thinking.</p><p>We generally follow the <a href="https://github.com/thoughtbot/dotfiles/blob/master/gitmessage"><strong>thoughtbot specification</strong></a>, and here are their instructions <a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">5 Useful Tips For A Better Commit Message</a>.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">50-character subject line</span><br><span class="line">72-character wrapped longer description. This should answer.</span><br><span class="line">* Why was this change necessary?</span><br><span class="line">* Why was this change necessary? * How does it address the problem?</span><br><span class="line">* How does it address the problem? * Are there any side effects?</span><br><span class="line">Include a <span class="built_in">link</span> to the ticket, <span class="keyword">if</span> any.</span><br></pre></td></tr></table></figure><p>Simply put:</p><ol><li>the first line should be no more than 50 characters. 2.</li><li>the second line is a blank line</li><li>the third line begins with a descriptive message, each line should be no more than 72 characters in length, with a serial number and no period at the end</li><li>the descriptive information starting on the third line is the main description:<ul><li>What changes were made to this submission?</li><li>What changes have been made to this submission? How is the problem being solved?</li><li>How does it address the problem? Will it affect anything?</li></ul></li><li>After the descriptive message, either leave a blank line and close the issue or give a link to the appropriate ticket.</li></ol><p>Example:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fix(<span class="variable">$compile</span>): couple of unit tests <span class="keyword">for</span> IE9</span><br><span class="line"></span><br><span class="line">1. Older IEs serialize html uppercased, but IE9 does not...</span><br><span class="line">2. would be better to expect <span class="keyword">case</span> insensitive, unfortunately jasmine does</span><br><span class="line">3. not allow to user regexps <span class="keyword">for</span> throw expectations</span><br><span class="line"></span><br><span class="line">Closes <span class="comment">#392</span></span><br><span class="line">Breaks foo.bar api, foo.baz should be used instead</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;When using git to commit a version, the commit message is very important, as you need to be able to look back at the commit log and see w</summary>
+      
+    
+    
+    
+    <category term="Technology Development" scheme="http://aritlh.github.io/categories/Technology-Development/"/>
+    
+    <category term="Git" scheme="http://aritlh.github.io/categories/Technology-Development/Git/"/>
+    
+    
+    <category term="Git" scheme="http://aritlh.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome Aritlh&#39;s Wiki Site</title>
+    <link href="http://aritlh.github.io/wiki/index/"/>
+    <id>http://aritlh.github.io/wiki/index/</id>
+    <published>2017-01-22T21:14:54.000Z</published>
+    <updated>2024-04-15T07:58:20.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is Aritlh’s personal Wiki site, mainly recording some scattered knowledge points summarized from his own words.</p><p>I’ve always felt that <strong>knowledge should not be fragmented, but structured</strong>. So I hope to find an elegant way to manage my knowledge.</p><p>I have learned about or tried methods such as OneNote, Evernote, Blogs, Wikis, etc. and summarized a set of processes for knowledge acquisition, absorption, and management that I think is relatively reasonable:</p><ol><li>Use web pages, RSS, WeChat, and other online channels as sources of knowledge acquisition.</li><li>Use a note-taking system (handwritten notes, OneNote, Evernote) to initially filter valuable and targeted information, <strong>bookmark</strong> information, <strong>classify and organize</strong> it, and take notes on the <strong>key points</strong> after reading.</li><li>For the occasional one or two sentences, or very scattered ideas, inspirations, and initially digested content that come to mind, record them in a <strong>Wiki</strong>.</li><li>Finally, when there is a certain amount of content in a section of the Wiki, re-read the notes and content in that section of the Wiki, refine and distill them, add your own thoughts and understanding, and write an article to be published on a <strong>blog</strong>.</li></ol><p>In practice, the <strong>note-taking system</strong> is mainly for <strong>classifying and organizing</strong> large chunks of information, the <strong>Wiki</strong> is mainly for <strong>accumulating</strong> scattered knowledge, and the <strong>blog</strong> is only for the <strong>essence</strong>.</p><p>When a section of the Wiki is first created, there may be very little content or just a sentence. But through this process, as you encounter more and more about that topic, the scattered knowledge also increases, and the content recorded in that section of the Wiki will also increase, which is to <strong>structure and organize what was originally a large amount of fragmented knowledge through accumulation</strong>.</p><p>The purpose of the blog is to <strong>share and showcase</strong> your knowledge and demonstrate your level of expertise. It needs to present something substantial, so it is not suitable for scattered snippets of knowledge. It is more suitable for presenting a <strong>series</strong> of summaries or tutorials, as a highly systematic knowledge platform.</p><p>When I tried to deploy my own Wiki system, I started to struggle with choosing which Wiki system to use. Referring to online blogs, I actually deployed and compared several popular Wiki systems: MediaWiki, DokuWiki, MDwiki, TiddlyWiki, wiz, vimwiki, Simiki, Wikitten, etc. None of them were satisfactory. Some were difficult and complex to deploy, some had ugly interfaces, some couldn’t have nested categories, some nested categories couldn’t be expanded, some couldn’t search, and some even didn’t use Markdown…</p><p>Based on these unsatisfactory user experiences, I summarized some of my requirements for a <strong>personal Wiki</strong>:</p><ul><li>Simple and beautiful interface with a friendly font and layout</li><li>Support for multi-level categorization</li><li>Easy to modify and update content</li><li>Simple deployment</li><li>Category directories can be expanded and collapsed</li><li>When a category is expanded, you can view the titles of all articles&#x2F;entries under that category</li><li>Each article&#x2F;entry can be assigned multiple categories&#x2F;tags</li><li>The Wiki should support internal linking</li><li>Use Markdown to write articles&#x2F;entries</li><li>Support full-text search (searchable content and titles)</li></ul><p>In my previous usage, Wikitten was the closest to my needs, but there were still some conditions that were not met, such as deployment and search. But personally, I liked the style of Wikitten.</p><p>So in the end, I chose to mimic the style of Wikitten and write this Hexo-based Wiki theme hexo-theme-Wikitten as my own Wiki system, which basically implements the above requirements. Now I’m using it for myself for the time being, of course, this initial functionality is still very simple, and there is a bunch of bugs and TODO lists that need to be maintained. I welcome anyone interested to submit PRs.</p>]]></content>
     
     
       
@@ -34,34 +60,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Git commit message 基本规范</title>
-    <link href="http://example.com/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/"/>
-    <id>http://example.com/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/</id>
-    <published>2017-01-22T21:14:54.000Z</published>
-    <updated>2024-04-15T07:07:38.590Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用 git 提交版本时，commit message 很重要，在回顾 commit log 时需要清晰的知道每次改动是什么。</p><p>在我们写这个提交信息（commit message）时，应该遵守一定书写结构，帮助我们统一规范和理清思路。</p><p>一般遵守 <a href="https://github.com/thoughtbot/dotfiles/blob/master/gitmessage"><strong>thoughtbot 规范</strong></a>，这里有他们的详细说明 <a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">5 Useful Tips For A Better Commit Message</a>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">50-character subject line</span><br><span class="line"></span><br><span class="line">72-character wrapped longer description. This should answer:</span><br><span class="line"></span><br><span class="line">* Why was this change necessary?</span><br><span class="line">* How does it address the problem?</span><br><span class="line">* Are there any side effects?</span><br><span class="line"></span><br><span class="line">Include a <span class="built_in">link</span> to the ticket, <span class="keyword">if</span> any.</span><br></pre></td></tr></table></figure><p>简单的说就是：</p><ol><li>第一行不超过 50 个字符</li><li>第二行空一行</li><li>第三行开始是描述信息，每行长度不超过 72 个字符，有序号，结尾无句号</li><li>第三行开始的描述信息主要说明：<ul><li>这个提交有什么改动？</li><li>如何解决的问题？</li><li>会对哪方面产生影响吗？</li></ul></li><li>描述信息完后空一行，close issue 或者给个相应 ticket 的链接</li></ol><p>Example:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fix(<span class="variable">$compile</span>): couple of unit tests <span class="keyword">for</span> IE9</span><br><span class="line"> </span><br><span class="line">1. Older IEs serialize html uppercased, but IE9 does not...</span><br><span class="line">2. Would be better to expect <span class="keyword">case</span> insensitive, unfortunately jasmine does</span><br><span class="line">3. not allow to user regexps <span class="keyword">for</span> throw expectations</span><br><span class="line"> </span><br><span class="line">Closes <span class="comment">#392</span></span><br><span class="line">Breaks foo.bar api, foo.baz should be used instead</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;使用 git 提交版本时，commit message 很重要，在回顾 commit log 时需要清晰的知道每次改动是什么。&lt;/p&gt;
-&lt;p&gt;在我们写这个提交信息（commit message）时，应该遵守一定书写结构，帮助我们统一规范和理清思路。&lt;/p&gt;
-&lt;p&gt;一般遵守 </summary>
-      
-    
-    
-    
-    <category term="Technology Development" scheme="http://example.com/categories/Technology-Development/"/>
-    
-    <category term="Git" scheme="http://example.com/categories/Technology-Development/Git/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
