@@ -166,3 +166,9 @@ busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
+
+hexo_pro:
+  username: admin
+  password: 123
+  avatar: https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/aritlh.png
+  secret: xxx // jwt secret key
