@@ -61,7 +61,7 @@ Vue is designed to be flexible and incrementally adoptable. Depending on your us
 This is why we call Vue "The Progressive Framework": it's a framework that can grow with you and adapt to your needs.
 
 ## Single-File Components
-​In most build-tool-enabled Vue projects, we author Vue components using an HTML-like file format called Single-File Component (also known as *.vue files, abbreviated as SFC). A Vue SFC, as the name suggests, encapsulates the component's logic (JavaScript), template (HTML), and styles (CSS) in a single file. Here's the previous example, written in SFC format:
+​In most build-tool-enabled Vue projects, we author Vue components using an HTML-like file format called Single-File Component (also known as `*.vue` files, abbreviated as SFC). A Vue SFC, as the name suggests, encapsulates the component's logic (JavaScript), template (HTML), and styles (CSS) in a single file. Here's the previous example, written in SFC format:
 
 ```vue
 <script>
