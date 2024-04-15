@@ -161,3 +161,8 @@ shiki:
     success: "Copy Success"
     error: "Copy Error"
     no_support: "Browser Not Support"
+
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
