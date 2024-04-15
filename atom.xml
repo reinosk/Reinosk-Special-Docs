@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-04-15T07:00:05.974Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Welcome Aritlh&#39;s Wiki Site</title>
+    <link href="http://example.com/wiki/index/"/>
+    <id>http://example.com/wiki/index/</id>
+    <published>2024-04-15T07:00:05.974Z</published>
+    <updated>2024-04-15T07:00:05.974Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is Aritlh’s personal Wiki site, mainly recording some scattered knowledge points summarized from his own words.</p><p>I’ve always felt that <strong>knowledge should not be fragmented, but structured</strong>. So I hope to find an elegant way to manage my knowledge.</p><p>I have learned about or tried methods such as OneNote, Evernote, Blogs, Wikis, etc. and summarized a set of processes for knowledge acquisition, absorption, and management that I think is relatively reasonable:</p><ol><li><p>Use web pages, RSS, WeChat, and other online channels as sources of knowledge acquisition.</p></li><li><p>Use a note-taking system (handwritten notes, OneNote, Evernote) to initially filter valuable and targeted information, <strong>bookmark</strong> information, <strong>classify and organize</strong> it, and take notes on the <strong>key points</strong> after reading.</p></li><li><p>For the occasional one or two sentences, or very scattered ideas, inspirations, and initially digested content that come to mind, record them in a <strong>Wiki</strong>.</p></li><li><p>Finally, when there is a certain amount of content in a section of the Wiki, re-read the notes and content in that section of the Wiki, refine and distill them, add your own thoughts and understanding, and write an article to be published on a <strong>blog</strong>.</p></li></ol><p>In practice, the <strong>note-taking system</strong> is mainly for <strong>classifying and organizing</strong> large chunks of information, the <strong>Wiki</strong> is mainly for <strong>accumulating</strong> scattered knowledge, and the <strong>blog</strong> is only for the <strong>essence</strong>.</p><p>When a section of the Wiki is first created, there may be very little content or just a sentence. But through this process, as you encounter more and more about that topic, the scattered knowledge also increases, and the content recorded in that section of the Wiki will also increase, which is to <strong>structure and organize what was originally a large amount of fragmented knowledge through accumulation</strong>.</p><p>The purpose of the blog is to <strong>share and showcase</strong> your knowledge and demonstrate your level of expertise. It needs to present something substantial, so it is not suitable for scattered snippets of knowledge. It is more suitable for presenting a <strong>series</strong> of summaries or tutorials, as a highly systematic knowledge platform.</p><p>When I tried to deploy my own Wiki system, I started to struggle with choosing which Wiki system to use. Referring to online blogs, I actually deployed and compared several popular Wiki systems: MediaWiki, DokuWiki, MDwiki, TiddlyWiki, wiz, vimwiki, Simiki, Wikitten, etc. None of them were satisfactory. Some were difficult and complex to deploy, some had ugly interfaces, some couldn’t have nested categories, some nested categories couldn’t be expanded, some couldn’t search, and some even didn’t use Markdown…</p><p>Based on these unsatisfactory user experiences, I summarized some of my requirements for a <strong>personal Wiki</strong>:</p><ul><li>Simple and beautiful interface with a friendly font and layout</li><li>Support for multi-level categorization</li><li>Easy to modify and update content</li><li>Simple deployment</li><li>Category directories can be expanded and collapsed</li><li>When a category is expanded, you can view the titles of all articles&#x2F;entries under that category</li><li>Each article&#x2F;entry can be assigned multiple categories&#x2F;tags</li><li>The Wiki should support internal linking</li><li>Use Markdown to write articles&#x2F;entries</li><li>Support full-text search (searchable content and titles)</li></ul><p>In my previous usage, Wikitten was the closest to my needs, but there were still some conditions that were not met, such as deployment and search. But personally, I liked the style of Wikitten.</p><p>So in the end, I chose to mimic the style of Wikitten and write this Hexo-based Wiki theme hexo-theme-Wikitten as my own Wiki system, which basically implements the above requirements. Now I’m using it for myself for the time being, of course, this initial functionality is still very simple, and there is a bunch of bugs and TODO lists that need to be maintained. I welcome anyone interested to submit PRs.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This is Aritlh’s personal Wiki site, mainly recording some scattered knowledge points summarized from his own words.&lt;/p&gt;
+&lt;p&gt;I’ve always f</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
