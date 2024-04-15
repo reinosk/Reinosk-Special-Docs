@@ -1974,7 +1974,7 @@ ol.toc {
   }
 }
 #recent-post li {
-  padding: 10px 0 10px 94px;
+  padding: 0 0 0 0;
 }
 #recent-post li:before,
 #recent-post li:after {
