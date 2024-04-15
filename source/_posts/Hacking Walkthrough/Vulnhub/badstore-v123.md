@@ -1,7 +1,6 @@
 ---
 title: Badstore v1.2.3
 date: 2019-02-12 04:14:54
-tags: [Vulnhub]
 ---
 
 The following is a vulnhub engine search from 2004. While this website may not be completely safe from advanced attacks, it serves as a valuable learning resource for beginners like me to practice identifying and exploiting common and easy-to-find web application vulnerabilities.

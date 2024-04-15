@@ -1,7 +1,6 @@
 ---
 title: Git commit message 基本规范
 date: 2019-02-12 04:14:54
-tags: [Git]
 ---
 
 When using git to commit a version, the commit message is very important, as you need to be able to look back at the commit log and see what was changed each time.

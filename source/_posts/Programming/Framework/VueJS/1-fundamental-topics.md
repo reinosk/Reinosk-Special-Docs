@@ -1,7 +1,6 @@
 ---
 title: "VueJS #1 Fundamental Topics"
 date: 2024-04-15 16:38:54
-tags: [VueJS]
 ---
 
 Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.[^1]
