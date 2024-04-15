@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://aritlh.github.io/wiki/index/</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://aritlh.github.io/wiki/Hacking%20Walkthrough/Vulnhub/badstore-v123/</loc>
     
     <lastmod>2024-04-15</lastmod>
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/index/</loc>
+    <loc>http://aritlh.github.io/categories/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -39,15 +48,6 @@
   
   <url>
     <loc>http://aritlh.github.io/about/index.html</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/categories/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -67,14 +67,14 @@
 
   
   <url>
-    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/</loc>
+    <loc>http://aritlh.github.io/categories/Programming/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Programming/</loc>
+    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -88,14 +88,14 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/Vulnhub/</loc>
+    <loc>http://aritlh.github.io/categories/Programming/VueJS/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Programming/VueJS/</loc>
+    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/Vulnhub/</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
