@@ -3,7 +3,7 @@ title: "VueJS #1 Fundamental Topics"
 date: 2024-04-15 16:38:54
 ---
 
-Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.[^1]
+Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.
 
 ## What is Vue?
 Vue is a JavaScript framework for building interfaces. It buids on top of 3 standards:
@@ -14,7 +14,7 @@ Vue is a JavaScript framework for building interfaces. It buids on top of 3 stan
 
 and provides a declarative, component-based programming model that helps you efficiently develop user interfaces of any complexity.
 
-Here is a minimal example:[^2]
+Here is a minimal example:
 
 
 ```js
@@ -31,7 +31,7 @@ createApp({
 }).mount('#app')
 ```
 
-```js
+```vue
 <div id="app">
   <button @click="count++">
     Count is: {{ count }}
@@ -63,7 +63,7 @@ This is why we call Vue "The Progressive Framework": it's a framework that can g
 ## Single-File Components
 ​In most build-tool-enabled Vue projects, we author Vue components using an HTML-like file format called Single-File Component (also known as *.vue files, abbreviated as SFC). A Vue SFC, as the name suggests, encapsulates the component's logic (JavaScript), template (HTML), and styles (CSS) in a single file. Here's the previous example, written in SFC format:
 
-```js
+```vue
 <script>
 export default {
   data() {
@@ -91,7 +91,7 @@ Vue components can be authored in two different API styles: **Options API** and 
 ### Options API
 With Options API, we define a component's logic using an object of options such as `data`, `methods`, and `mounted`. Properties defined by options are exposed on `this` inside functions, which points to the component instance:
 
-```js
+```vue
 <script>
 export default {
   // Properties returned from data() become reactive state
@@ -129,7 +129,7 @@ With Composition API, we define a component's logic using imported API functions
 
 Here is the same component, with the exact same template, but using Composition API and `<script setup>` instead:
 
-```js
+```vue
 <script setup>
 import { ref, onMounted } from 'vue'
 
@@ -167,6 +167,3 @@ If you are new to Vue, here's our general recommendation:
     - Go with Composition API + Single-File Components if you plan to build full applications with Vue.
 
 You don't have to commit to only one style during the learning phase. The rest of the documentation will provide code samples in both styles where applicable, and you can toggle between them at any time using the **API Preference switches** at the top of the left sidebar.
-
-[^1]: https://roadmap.sh/vue
-[^2]: https://vuejs.org/guide/introduction.html
