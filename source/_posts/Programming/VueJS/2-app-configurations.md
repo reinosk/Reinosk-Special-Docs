@@ -189,3 +189,61 @@ app.use(MyPlugin)
 ```
 
 - **See also** [Plugins](https://vuejs.org/guide/reusability/plugins)
+
+### app.mixin()
+​Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.
+
+> **_Not Recommended_**
+>
+> _Mixins are supported in Vue 3 mainly for backwards compatibility, due to their widespread use in ecosystem libraries. Use of mixins, especially global mixins, should be avoided in application code._
+>
+> _For logic reuse, prefer Composables instead._
+
+- **Type**
+
+```ts
+interface App {
+  mixin(mixin: ComponentOptions): this
+}
+```
+
+### app.provide()
+​Provide a value that can be injected in all descendant components within the application.
+
+- **Type**
+
+```ts
+interface App {
+  provide<T>(key: InjectionKey<T> | symbol | string, value: T): this
+}
+```
+
+- **Details**
+
+Expects the injection key as the first argument, and the provided value as the second. Returns the application instance itself.
+
+- **Example**
+
+```js
+import { createApp } from 'vue'
+
+const app = createApp(/* ... */)
+
+app.provide('message', 'hello')
+```
+
+Inside a component in the application:
+
+```js
+export default {
+  inject: ['message'],
+  created() {
+    console.log(this.message) // 'hello'
+  }
+}
+```
+
+- **See also**
+    - [Provide / Inject](https://vuejs.org/guide/components/provide-inject)
+    - [App-level Provide](https://vuejs.org/guide/components/provide-inject#app-level-provide)
+    - [app.runWithContext()](https://vuejs.org/api/application.html#app-runwithcontext)
