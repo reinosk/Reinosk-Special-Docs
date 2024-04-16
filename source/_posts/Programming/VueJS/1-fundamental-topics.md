@@ -18,8 +18,6 @@ Here is a minimal example:
 
 
 ```js
-// Options API
-
 import { createApp } from 'vue'
 
 createApp({
