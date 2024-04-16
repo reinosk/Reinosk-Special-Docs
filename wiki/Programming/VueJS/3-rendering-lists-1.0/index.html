@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>VueJS #3 Rendering Lists 1.0 | Aritlh&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="VueJS #3 Rendering Lists 1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="v-forWe can use the v-for directive to render a list of items based on an array. The v-for directive requires a special syntax in the form of item in items, where items is the source data array and it">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VueJS #3 Rendering Lists 1.0">
+<meta property="og:url" content="http://aritlh.github.io/wiki/Programming/VueJS/3-rendering-lists-1.0/index.html">
+<meta property="og:site_name" content="Aritlh&#39;s Wiki">
+<meta property="og:description" content="v-forWe can use the v-for directive to render a list of items based on an array. The v-for directive requires a special syntax in the form of item in items, where items is the source data array and it">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/fP5Bupi.png">
+<meta property="og:image" content="https://i.imgur.com/nknsZG2.png">
+<meta property="article:published_time" content="2024-04-16T00:42:21.000Z">
+<meta property="article:modified_time" content="2024-04-16T01:45:12.860Z">
+<meta property="article:author" content="Aritlh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/fP5Bupi.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Aritlh&#39;s Wiki" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/kitsune.png">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#90a4ae;--hl-bg:#f6f8fa;--hltools-bg:#e6ebf1;--hltools-color:#90a4ae;--hlnumber-bg:#f6f8fa;--hlnumber-color:rgba(144,164,174,0.5);--hlscrollbar-bg:#dce4eb;--hlexpand-bg:linear-gradient(180deg,rgba(246,248,250,0.1),rgba(246,248,250,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Aritlh&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hacking Walkthrough
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Vulnhub
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Hacking%20Walkthrough/Vulnhub/badstore-v123/">Badstore v1.2.3</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network Security
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Network%20Security/1-the-basic-of-networking/">Network Security #1 The Basic of Networking</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Programming
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            VueJS
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file active"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Technology Development
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Git
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/">Git commit message 基本规范</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome Aritlh's Wiki Site</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Network%20Security/1-the-basic-of-networking/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Network-Security/">Network Security</a></p>
+                            <p class="item-title"><a href="/wiki/Network%20Security/1-the-basic-of-networking/" class="title">Network Security #1 The Basic of Networking</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T01:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="title">VueJS #3 Rendering Lists 1.0</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="title">VueJS #4 Rendering Lists 1.1</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/2-app-configurations/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/2-app-configurations/" class="title">VueJS #2 App Configurations</a></p>
+                            <p class="item-date"><time datetime="2024-04-15T21:00:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/1-fundamental-topics/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/1-fundamental-topics/" class="title">VueJS #1 Fundamental Topics</a></p>
+                            <p class="item-date"><time datetime="2024-04-15T09:38:54.000Z" itemprop="datePublished">2024-04-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Programming/VueJS/3-rendering-lists-1.0" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">
+            <time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/aritlh/aritlh.github.io/raw/master/source/_posts/Programming/VueJS/3-rendering-lists-1.0.md"> Source </a>
+                            </div>
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/edit/master/source/_posts/Programming/VueJS/3-rendering-lists-1.0.md'> Edit </a>
+                            </div> -->
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/commits/master/source/_posts/Programming/VueJS/3-rendering-lists-1.0.md'> History </a>
+                            </div> -->
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            VueJS #3 Rendering Lists 1.0
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for"><span class="toc-number">1.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for-with-an-Object"><span class="toc-number">2.</span> <span class="toc-text">v-for with an Object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for-with-a-Range"><span class="toc-number">3.</span> <span class="toc-text">v-for with a Range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for-on"><span class="toc-number">4.</span> <span class="toc-text">v-for on &lt;template&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for-with-v-if"><span class="toc-number">5.</span> <span class="toc-text">v-for with v-if</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h2><p>We can use the <code>v-for</code> directive to render a list of items based on an array. The v-for directive requires a special syntax in the form of <code>item in items</code>, where <code>items</code> is the source data array and <code>item</code> is an alias for the array element being iterated on:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    items: [{ message: </span><span style="color: #032F62">&#39;Foo&#39;</span><span style="color: #24292E"> }, { message: </span><span style="color: #032F62">&#39;Bar&#39;</span><span style="color: #24292E"> }]</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ item.message }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>Inside the <code>v-for</code> scope, template expressions have access to all parent scope properties. In addition, <code>v-for</code> also supports an optional second alias for the index of the current item:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    parentMessage: </span><span style="color: #032F62">&#39;Parent&#39;</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">    items: [{ message: </span><span style="color: #032F62">&#39;Foo&#39;</span><span style="color: #24292E"> }, { message: </span><span style="color: #032F62">&#39;Bar&#39;</span><span style="color: #24292E"> }]</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">(item, index) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ parentMessage }} - {{ index }} - {{ item.message }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p><img src="https://i.imgur.com/fP5Bupi.png" alt="v-for"></p>
+<p>The variable scoping of v-for is similar to the following JavaScript:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">parentMessage</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;Parent&#39;</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">items</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> [</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">/* ... */</span></span>
+<span class="line"><span style="color: #24292E">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">items.</span><span style="color: #6F42C1">forEach</span><span style="color: #24292E">((</span><span style="color: #E36209">item</span><span style="color: #24292E">, </span><span style="color: #E36209">index</span><span style="color: #24292E">) </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">// has access to outer scope `parentMessage`</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">// but `item` and `index` are only available in here</span></span>
+<span class="line"><span style="color: #24292E">  console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(parentMessage, item.message, index)</span></span>
+<span class="line"><span style="color: #24292E">})</span></span></code></pre></div></div></figure>
+
+<p>Notice how the <code>v-for</code> value matches the function signature of the <code>forEach</code> callback. In fact, you can use destructuring on the <code>v-for</code> item alias similar to destructuring function arguments:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">{ message } </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ message }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">&lt;!-- with index alias --&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">({ message }, index) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ message }} {{ index }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>For nested <code>v-for</code>, scoping also works similar to nested functions. Each <code>v-for</code> scope has access to parent scopes:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;span v-for=&quot;childItem in item.children&quot;&gt;</span></span>
+<span class="line"><span style="color: #24292E">    {{ item.message }} {{ childItem }}</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/span&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>You can also use <code>of</code> as the delimiter instead of <code>in</code>, so that it is closer to JavaScript’s syntax for iterators:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">div</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item </span><span style="color: #D73A49">of</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">div</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<h2 id="v-for-with-an-Object"><a href="#v-for-with-an-Object" class="headerlink" title="v-for with an Object"></a><code>v-for</code> with an Object</h2><p>You can also use <code>v-for</code> to iterate through the properties of an object. The iteration order will be based on the result of calling <code>Object.keys()</code> on the object:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    myObject: {</span></span>
+<span class="line"><span style="color: #24292E">      title: </span><span style="color: #032F62">&#39;How to do lists in Vue&#39;</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">      author: </span><span style="color: #032F62">&#39;Jane Doe&#39;</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">      publishedAt: </span><span style="color: #032F62">&#39;2016-04-10&#39;</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;li v-for=&quot;value in myObject&quot;&gt;</span></span>
+<span class="line"><span style="color: #24292E">    {{ value }}</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>You can also provide a second alias for the property’s name (a.k.a. key):</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">(value, key) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> myObject</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ key }}: {{ value }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>And another for the index:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">(value, key, index) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> myObject</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ index }}. {{ key }}: {{ value }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+<p>​<br><img src="https://i.imgur.com/nknsZG2.png" alt="v-for with an Object"></p>
+<h2 id="v-for-with-a-Range"><a href="#v-for-with-a-Range" class="headerlink" title="v-for with a Range"></a><code>v-for</code> with a Range</h2><p><code>v-for</code> can also take an integer. In this case it will repeat the template that many times, based on a range of <code>1...n</code>.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">span</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">n </span><span style="color: #D73A49">in</span><span style="color: #24292E"> </span><span style="color: #005CC5">10</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;{{ n }}&lt;/</span><span style="color: #22863A">span</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>Note here <code>n</code> starts with an initial value of <code>1</code> instead of <code>0</code>.</p>
+<h2 id="v-for-on"><a href="#v-for-on" class="headerlink" title="v-for on &lt;template&gt;"></a><code>v-for</code> on <code>&lt;template&gt;</code></h2><p>Similar to template <code>v-if</code>, you can also use a <code>&lt;template&gt;</code> tag with <code>v-for</code> to render a block of multiple elements. For example:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;template v-for=&quot;item in items&quot;&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;li&gt;{{ item.msg }}&lt;/li&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;li class=&quot;divider&quot; role=&quot;presentation&quot;&gt;&lt;/li&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/template&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<h2 id="v-for-with-v-if"><a href="#v-for-with-v-if" class="headerlink" title="v-for with v-if"></a><code>v-for</code> with <code>v-if</code></h2><blockquote>
+<p><strong><em>Note</em></strong></p>
+<p><em>It’s not recommended to use <code>v-if</code> and <code>v-for</code> on the same element due to implicit precedence. Refer to <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/style-guide/rules-essential#avoid-v-if-with-v-for">style guide</a> for details.</em></p>
+</blockquote>
+<p>When they exist on the same node, <code>v-if</code> has a higher priority than <code>v-for</code>. That means the <code>v-if</code> condition will not have access to variables from the scope of the <code>v-for</code>:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6A737D">&lt;!--</span></span>
+<span class="line"><span style="color: #6A737D">This will throw an error because property &quot;todo&quot;</span></span>
+<span class="line"><span style="color: #6A737D">is not defined on instance.</span></span>
+<span class="line"><span style="color: #6A737D">--&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo </span><span style="color: #D73A49">in</span><span style="color: #24292E"> todos</span><span style="color: #032F62">&quot;</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-if</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #D73A49">!</span><span style="color: #24292E">todo.isComplete</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  {{ todo.name }}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>This can be fixed by moving <code>v-for</code> to a wrapping <code>&lt;template&gt;</code> tag (which is also more explicit):</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo </span><span style="color: #D73A49">in</span><span style="color: #24292E"> todos</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-if</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #D73A49">!</span><span style="color: #24292E">todo.isComplete</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">    {{ todo.name }}</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/Network%20Security/1-the-basic-of-networking/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Network Security #1 The Basic of Networking
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">VueJS #4 Rendering Lists 1.1</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Modified by Aritlh &copy; 2024 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten.</a>
+            <!-- 
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+             -->
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: false,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copied!',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.25 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

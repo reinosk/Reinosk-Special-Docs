@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>VueJS #4 Rendering Lists 1.1 | Aritlh&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="VueJS #4 Rendering Lists 1.1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Maintaining State with key​When Vue is updating a list of elements rendered with v-for, by default it uses an “in-place patch” strategy. If the order of the data items has changed, instead of moving t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VueJS #4 Rendering Lists 1.1">
+<meta property="og:url" content="http://aritlh.github.io/wiki/Programming/VueJS/4.rendering-lists.1.1/index.html">
+<meta property="og:site_name" content="Aritlh&#39;s Wiki">
+<meta property="og:description" content="Maintaining State with key​When Vue is updating a list of elements rendered with v-for, by default it uses an “in-place patch” strategy. If the order of the data items has changed, instead of moving t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/aI6sJWG.png">
+<meta property="article:published_time" content="2024-04-16T00:42:21.000Z">
+<meta property="article:modified_time" content="2024-04-16T01:21:12.733Z">
+<meta property="article:author" content="Aritlh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/aI6sJWG.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Aritlh&#39;s Wiki" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/aritlh/aritlh.github.io/master/kitsune.png">
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#90a4ae;--hl-bg:#f6f8fa;--hltools-bg:#e6ebf1;--hltools-color:#90a4ae;--hlnumber-bg:#f6f8fa;--hlnumber-color:rgba(144,164,174,0.5);--hlscrollbar-bg:#dce4eb;--hlexpand-bg:linear-gradient(180deg,rgba(246,248,250,0.1),rgba(246,248,250,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Aritlh&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hacking Walkthrough
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Vulnhub
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Hacking%20Walkthrough/Vulnhub/badstore-v123/">Badstore v1.2.3</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network Security
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Network%20Security/1-the-basic-of-networking/">Network Security #1 The Basic of Networking</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Programming
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            VueJS
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file active"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Technology Development
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Git
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Technology%20Development/Git/git-commit-message-basic-specifications/">Git commit message 基本规范</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome Aritlh's Wiki Site</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Network%20Security/1-the-basic-of-networking/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Network-Security/">Network Security</a></p>
+                            <p class="item-title"><a href="/wiki/Network%20Security/1-the-basic-of-networking/" class="title">Network Security #1 The Basic of Networking</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T01:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="title">VueJS #3 Rendering Lists 1.0</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="title">VueJS #4 Rendering Lists 1.1</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/2-app-configurations/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/2-app-configurations/" class="title">VueJS #2 App Configurations</a></p>
+                            <p class="item-date"><time datetime="2024-04-15T21:00:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/1-fundamental-topics/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/1-fundamental-topics/" class="title">VueJS #1 Fundamental Topics</a></p>
+                            <p class="item-date"><time datetime="2024-04-15T09:38:54.000Z" itemprop="datePublished">2024-04-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Programming/VueJS/4.rendering-lists.1.1" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">
+            <time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/aritlh/aritlh.github.io/raw/master/source/_posts/Programming/VueJS/4.rendering-lists.1.1.md"> Source </a>
+                            </div>
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/edit/master/source/_posts/Programming/VueJS/4.rendering-lists.1.1.md'> Edit </a>
+                            </div> -->
+                            <!-- <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/commits/master/source/_posts/Programming/VueJS/4.rendering-lists.1.1.md'> History </a>
+                            </div> -->
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            VueJS #4 Rendering Lists 1.1
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maintaining-State-with-key"><span class="toc-number">1.</span> <span class="toc-text">Maintaining State with key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for-with-a-Component"><span class="toc-number">2.</span> <span class="toc-text">v-for with a Component</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-of-a-Simple-Todo-List"><span class="toc-number">2.1.</span> <span class="toc-text">Example of a Simple Todo List</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-Change-Detection"><span class="toc-number">3.</span> <span class="toc-text">Array Change Detection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation-Methods"><span class="toc-number">3.1.</span> <span class="toc-text">Mutation Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Replacing-an-Array"><span class="toc-number">3.2.</span> <span class="toc-text">Replacing an Array</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Displaying-Filtered-Sorted-Results"><span class="toc-number">4.</span> <span class="toc-text">Displaying Filtered&#x2F;Sorted Results</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="Maintaining-State-with-key"><a href="#Maintaining-State-with-key" class="headerlink" title="Maintaining State with key"></a>Maintaining State with <code>key</code></h2><p>​When Vue is updating a list of elements rendered with <code>v-for</code>, by default it uses an “in-place patch” strategy. If the order of the data items has changed, instead of moving the DOM elements to match the order of the items, Vue will patch each element in-place and make sure it reflects what should be rendered at that particular index.</p>
+<p>This default mode is efficient, but only suitable when your list render output does not rely on child component state or temporary DOM state (e.g. form input values).</p>
+<p>To give Vue a hint so that it can track each node’s identity, and thus reuse and reorder existing elements, you need to provide a unique <code>key</code> attribute for each item:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">div</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E"> :</span><span style="color: #6F42C1">key</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item.id</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;!-- content --&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">div</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>When using <code>&lt;template v-for&gt;</code>, the key should be placed on the <code>&lt;template&gt;</code> container:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo </span><span style="color: #D73A49">in</span><span style="color: #24292E"> todos</span><span style="color: #032F62">&quot;</span><span style="color: #24292E"> :</span><span style="color: #6F42C1">key</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo.name</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;{{ todo.name }}&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<blockquote>
+<p><strong><em>Note</em></strong></p>
+<p><em><code>key</code> here is a special attribute being bound with <code>v-bind</code>. It should not be confused with the property key variable when <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/essentials/list.html#v-for-with-an-object">using <code>v-for</code> with an object</a>.</em></p>
+</blockquote>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/style-guide/rules-essential#use-keyed-v-for">It is recommended</a> to provide a <code>key</code> attribute with <code>v-for</code> whenever possible, unless the iterated DOM content is simple (i.e. contains no components or stateful DOM elements), or you are intentionally relying on the default behavior for performance gains.</p>
+<p>The <code>key</code> binding expects primitive values - i.e. strings and numbers. Do not use objects as <code>v-for</code> keys. For detailed usage of the <code>key</code> attribute, please see the key <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/built-in-special-attributes#key">API documentation</a>.</p>
+<h2 id="v-for-with-a-Component"><a href="#v-for-with-a-Component" class="headerlink" title="v-for with a Component"></a><code>v-for</code> with a Component</h2><blockquote>
+<p><em>This section assumes knowledge of <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/essentials/component-basics">Components</a>. Feel free to skip it and come back later.</em></p>
+</blockquote>
+<p>You can directly use <code>v-for</code> on a component, like any normal element (don’t forget to provide a <code>key</code>):</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">MyComponent</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span><span style="color: #24292E"> :</span><span style="color: #6F42C1">key</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item.id</span><span style="color: #032F62">&quot;</span><span style="color: #24292E"> /&gt;</span></span></code></pre></div></div></figure>
+
+<p>However, this won’t automatically pass any data to the component, because components have isolated scopes of their own. In order to pass the iterated data into the component, we should also use props:</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">MyComponent</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">(item, index) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> items</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">  :</span><span style="color: #6F42C1">item</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">  :</span><span style="color: #6F42C1">index</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">index</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">  :</span><span style="color: #6F42C1">key</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">item.id</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">/&gt;</span></span></code></pre></div></div></figure>
+
+<p>The reason for not automatically injecting <code>item</code> into the component is because that makes the component tightly coupled to how <code>v-for</code> works. Being explicit about where its data comes from makes the component reusable in other situations.<br>​</p>
+<h3 id="Example-of-a-Simple-Todo-List"><a href="#Example-of-a-Simple-Todo-List" class="headerlink" title="Example of a Simple Todo List"></a>Example of a Simple Todo List</h3><p>This example of a simple todo list to see how to render a list of components using v-for, passing different data to each instance.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">// App.vue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> TodoItem </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;./TodoItem.vue&#39;</span></span>
+<span class="line"><span style="color: #24292E">  </span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  components: { TodoItem },</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      newTodoText: </span><span style="color: #032F62">&#39;&#39;</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">      todos: [</span></span>
+<span class="line"><span style="color: #24292E">        {</span></span>
+<span class="line"><span style="color: #24292E">          id: </span><span style="color: #005CC5">1</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">          title: </span><span style="color: #032F62">&#39;Do the dishes&#39;</span></span>
+<span class="line"><span style="color: #24292E">        },</span></span>
+<span class="line"><span style="color: #24292E">        {</span></span>
+<span class="line"><span style="color: #24292E">          id: </span><span style="color: #005CC5">2</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">          title: </span><span style="color: #032F62">&#39;Take out the trash&#39;</span></span>
+<span class="line"><span style="color: #24292E">        },</span></span>
+<span class="line"><span style="color: #24292E">        {</span></span>
+<span class="line"><span style="color: #24292E">          id: </span><span style="color: #005CC5">3</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">          title: </span><span style="color: #032F62">&#39;Mow the lawn&#39;</span></span>
+<span class="line"><span style="color: #24292E">        }</span></span>
+<span class="line"><span style="color: #24292E">      ],</span></span>
+<span class="line"><span style="color: #24292E">      nextTodoId: </span><span style="color: #005CC5">4</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">  methods: {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">addNewTodo</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #005CC5">this</span><span style="color: #24292E">.todos.</span><span style="color: #6F42C1">push</span><span style="color: #24292E">({</span></span>
+<span class="line"><span style="color: #24292E">        id: </span><span style="color: #005CC5">this</span><span style="color: #24292E">.nextTodoId</span><span style="color: #D73A49">++</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">        title: </span><span style="color: #005CC5">this</span><span style="color: #24292E">.newTodoText</span></span>
+<span class="line"><span style="color: #24292E">      })</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #005CC5">this</span><span style="color: #24292E">.newTodoText </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;&#39;</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">	&lt;</span><span style="color: #22863A">form</span><span style="color: #24292E"> </span><span style="color: #6F42C1">v-on</span><span style="color: #24292E">:</span><span style="color: #6F42C1">submit</span><span style="color: #24292E">.</span><span style="color: #6F42C1">prevent</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">addNewTodo</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;</span><span style="color: #22863A">label</span><span style="color: #24292E"> </span><span style="color: #6F42C1">for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;new-todo&quot;</span><span style="color: #24292E">&gt;Add a todo&lt;/</span><span style="color: #22863A">label</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;</span><span style="color: #22863A">input</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #6F42C1">v-model</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">newTodoText</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #6F42C1">id</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;new-todo&quot;</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #6F42C1">placeholder</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;E.g. Feed the cat&quot;</span></span>
+<span class="line"><span style="color: #24292E">    /&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;</span><span style="color: #22863A">button</span><span style="color: #24292E">&gt;Add&lt;/</span><span style="color: #22863A">button</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/</span><span style="color: #22863A">form</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">    &lt;</span><span style="color: #22863A">todo-item</span></span>
+<span class="line"><span style="color: #24292E">      </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">(todo, index) </span><span style="color: #D73A49">in</span><span style="color: #24292E"> todos</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">      :</span><span style="color: #6F42C1">key</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo.id</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">      :</span><span style="color: #6F42C1">title</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todo.title</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">      @</span><span style="color: #6F42C1">remove</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">todos.</span><span style="color: #6F42C1">splice</span><span style="color: #24292E">(index, </span><span style="color: #005CC5">1</span><span style="color: #24292E">)</span><span style="color: #032F62">&quot;</span></span>
+<span class="line"><span style="color: #24292E">    &gt;&lt;/</span><span style="color: #22863A">todo-item</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">// TodoItem.vue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">	props: [</span><span style="color: #032F62">&#39;title&#39;</span><span style="color: #24292E">],</span></span>
+<span class="line"><span style="color: #24292E">  emits: [</span><span style="color: #032F62">&#39;remove&#39;</span><span style="color: #24292E">]</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">    {{ title }}</span></span>
+<span class="line"><span style="color: #24292E">    &lt;</span><span style="color: #22863A">button</span><span style="color: #24292E"> @</span><span style="color: #6F42C1">click</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #6F42C1">$emit</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;remove&#39;</span><span style="color: #24292E">)</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;Remove&lt;/</span><span style="color: #22863A">button</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p><img src="https://i.imgur.com/aI6sJWG.png" alt="Simple Todo List"></p>
+<h2 id="Array-Change-Detection"><a href="#Array-Change-Detection" class="headerlink" title="Array Change Detection"></a>Array Change Detection</h2><h3 id="Mutation-Methods"><a href="#Mutation-Methods" class="headerlink" title="Mutation Methods"></a>Mutation Methods</h3><p>​Vue is able to detect when a reactive array’s mutation methods are called and trigger necessary updates. These mutation methods are:</p>
+<ul>
+<li><code>push()</code></li>
+<li><code>pop()</code></li>
+<li><code>shift()</code></li>
+<li><code>unshift()</code></li>
+<li><code>splice()</code></li>
+<li><code>sort()</code></li>
+<li><code>reverse()</code></li>
+</ul>
+<h3 id="Replacing-an-Array"><a href="#Replacing-an-Array" class="headerlink" title="Replacing an Array"></a>Replacing an Array</h3><p>​Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. <code>filter()</code>, <code>concat()</code> and <code>slice()</code>, which do not mutate the original array but always return a new array. When working with non-mutating methods, we should replace the old array with the new one:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #005CC5">this</span><span style="color: #24292E">.items </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span><span style="color: #24292E">.items.</span><span style="color: #6F42C1">filter</span><span style="color: #24292E">((</span><span style="color: #E36209">item</span><span style="color: #24292E">) </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> item.message.</span><span style="color: #6F42C1">match</span><span style="color: #24292E">(</span><span style="color: #032F62">/Foo/</span><span style="color: #24292E">))</span></span></code></pre></div></div></figure>
+
+<p>You might think this will cause Vue to throw away the existing DOM and re-render the entire list - luckily, that is not the case. Vue implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation.</p>
+<h2 id="Displaying-Filtered-Sorted-Results"><a href="#Displaying-Filtered-Sorted-Results" class="headerlink" title="Displaying Filtered&#x2F;Sorted Results"></a>Displaying Filtered&#x2F;Sorted Results</h2><p>​Sometimes we want to display a filtered or sorted version of an array without actually mutating or resetting the original data. In this case, you can create a computed property that returns the filtered or sorted array.</p>
+<p>For example:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    numbers: [</span><span style="color: #005CC5">1</span><span style="color: #24292E">, </span><span style="color: #005CC5">2</span><span style="color: #24292E">, </span><span style="color: #005CC5">3</span><span style="color: #24292E">, </span><span style="color: #005CC5">4</span><span style="color: #24292E">, </span><span style="color: #005CC5">5</span><span style="color: #24292E">]</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">},</span></span>
+<span class="line"><span style="color: #6F42C1">computed</span><span style="color: #24292E">: {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">evenNumbers</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span><span style="color: #24292E">.numbers.</span><span style="color: #6F42C1">filter</span><span style="color: #24292E">(</span><span style="color: #E36209">n</span><span style="color: #24292E"> </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> n </span><span style="color: #D73A49">%</span><span style="color: #24292E"> </span><span style="color: #005CC5">2</span><span style="color: #24292E"> </span><span style="color: #D73A49">===</span><span style="color: #24292E"> </span><span style="color: #005CC5">0</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">li</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">n </span><span style="color: #D73A49">in</span><span style="color: #24292E"> evenNumbers</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;{{ n }}&lt;/</span><span style="color: #22863A">li</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>In situations where computed properties are not feasible (e.g. inside nested <code>v-for</code> loops), you can use a method:</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    sets: [[ </span><span style="color: #005CC5">1</span><span style="color: #24292E">, </span><span style="color: #005CC5">2</span><span style="color: #24292E">, </span><span style="color: #005CC5">3</span><span style="color: #24292E">, </span><span style="color: #005CC5">4</span><span style="color: #24292E">, </span><span style="color: #005CC5">5</span><span style="color: #24292E"> ], [</span><span style="color: #005CC5">6</span><span style="color: #24292E">, </span><span style="color: #005CC5">7</span><span style="color: #24292E">, </span><span style="color: #005CC5">8</span><span style="color: #24292E">, </span><span style="color: #005CC5">9</span><span style="color: #24292E">, </span><span style="color: #005CC5">10</span><span style="color: #24292E">]]</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">},</span></span>
+<span class="line"><span style="color: #6F42C1">methods</span><span style="color: #24292E">: {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">even</span><span style="color: #24292E">(numbers) {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> numbers.</span><span style="color: #6F42C1">filter</span><span style="color: #24292E">(</span><span style="color: #E36209">number</span><span style="color: #24292E"> </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> number </span><span style="color: #D73A49">%</span><span style="color: #24292E"> </span><span style="color: #005CC5">2</span><span style="color: #24292E"> </span><span style="color: #D73A49">===</span><span style="color: #24292E"> </span><span style="color: #005CC5">0</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">ul</span><span style="color: #24292E"> </span><span style="color: #D73A49">v-for</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">numbers </span><span style="color: #D73A49">in</span><span style="color: #24292E"> sets</span><span style="color: #032F62">&quot;</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;li v-for=&quot;n in even(numbers)&quot;&gt;{{ n }}&lt;/li&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">ul</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>Be careful with <code>reverse()</code> and <code>sort()</code> in a computed property! These two methods will mutate the original array, which should be avoided in computed getters. Create a copy of the original array before calling these methods:</p>
+<figure class="shiki diff"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #B31D28">- return numbers.reverse()</span></span>
+<span class="line"><span style="color: #22863A">+ return [...numbers].reverse()</span></span></code></pre></div></div></figure>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    VueJS #3 Rendering Lists 1.0
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/Programming/VueJS/2-app-configurations/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">VueJS #2 App Configurations</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Modified by Aritlh &copy; 2024 
+            <a rel="external nofollow noopener noreferrer" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme - <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten.</a>
+            <!-- 
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+             -->
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: false,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copied!',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.25 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

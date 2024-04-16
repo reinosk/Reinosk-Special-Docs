@@ -1355,7 +1355,7 @@ div .article-more-link {
 }
 .toc-article {
   background: #f9f9f9;
-  margin: 2em 0 0 0.2em;
+  margin: 2em 0 2em 0.2em;
   padding: 1em;
   border: 1px solid #000;
   border-radius: 0px;
@@ -1373,7 +1373,7 @@ ol.toc {
 #toc {
   line-height: 1em;
   font-size: 0.8em;
-  float: right;
+  float: top;
 }
 #toc .toc {
   padding: 0;
