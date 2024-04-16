@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://aritlh.github.io/about/index.html</loc>
+    
+    <lastmod>2024-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://aritlh.github.io/wiki/Programming/VueJS/conditional-rendering%20/</loc>
     
     <lastmod>2024-04-16</lastmod>
@@ -77,15 +86,6 @@
     <loc>http://aritlh.github.io/wiki/Programming/VueJS/app-configurations/</loc>
     
     <lastmod>2024-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://aritlh.github.io/about/index.html</loc>
-    
-    <lastmod>2024-04-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
