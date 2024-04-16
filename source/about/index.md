@@ -7,6 +7,8 @@ layout: post
 
 
 ## 关于我自己
+Hello, my name is **Muhammad Faqih Alharits**, or commonly called **Ari** (on campus).
+
 I'm a proper coding fanatic, mate. Can't get enough of that programming malarkey. One thing that really gets me going is ethical hacking - finding security holes and plugging them up before any dodgy blokes try to exploit the system, y'know? but i still newbie forever.
 
 As for coding languages, JavaScript and TypeScript are right up my street. JS is the main lingo for web development, and TypeScript builds on it with some fancy object-oriented stuff and static type checking. Smashing, that is.
