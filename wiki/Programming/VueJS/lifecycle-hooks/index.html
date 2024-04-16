@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Network Security #1 Network Architecture and Protocols | Aritlh&#39;s Wiki</title>
+    <title>VueJS #6 Lifecycle Hooks | Aritlh&#39;s Wiki</title>
     
     
-        <meta name="keywords" content="Network Security #1 Network Architecture and Protocols">
+        <meta name="keywords" content="VueJS #6 Lifecycle Hooks">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="To attack network protocols, you need to understand the basic of computer networking. The more you understand how common networks are built and function, the easier it will be to apply that knowledge">
+    <meta name="description" content="Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Network Security #1 Network Architecture and Protocols">
-<meta property="og:url" content="http://aritlh.github.io/wiki/Network%20Security/1-network-architecture-and-protocols/index.html">
+<meta property="og:title" content="VueJS #6 Lifecycle Hooks">
+<meta property="og:url" content="http://aritlh.github.io/wiki/Programming/VueJS/lifecycle-hooks/index.html">
 <meta property="og:site_name" content="Aritlh&#39;s Wiki">
-<meta property="og:description" content="To attack network protocols, you need to understand the basic of computer networking. The more you understand how common networks are built and function, the easier it will be to apply that knowledge">
+<meta property="og:description" content="Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.imgur.com/PEwP15r.png">
-<meta property="article:published_time" content="2024-04-16T01:42:21.000Z">
-<meta property="article:modified_time" content="2024-04-16T05:50:46.064Z">
+<meta property="og:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
+<meta property="article:published_time" content="2024-04-16T13:00:21.000Z">
+<meta property="article:modified_time" content="2024-04-16T13:44:52.023Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/PEwP15r.png">
+<meta name="twitter:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
     
 
     
@@ -205,29 +205,29 @@
                      </ul> 
                     </li> 
                     
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network Security
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Network%20Security/network-architecture-and-protocols/">Network Security #1 Network Architecture and Protocols</a></li>  <li class="file"><a href="/wiki/Network%20Security/the-internet-protocol-suite/">Network Security #2 The Internet Protocol Suite</a></li>  <li class="file"><a href="/wiki/Network%20Security/data-encapsulation/">Network Security #3 Data Encapsulation</a></li>  </ul> 
+                    </li> 
+                    
                     <li class="directory open">
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder-open"></i>
                             &nbsp;
-                            Network Security
-                        </a>
-                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/Network%20Security/1-network-architecture-and-protocols/">Network Security #1 Network Architecture and Protocols</a></li>  <li class="file"><a href="/wiki/Network%20Security/2-the-internet-protocol-suite/">Network Security #2 The Internet Protocol Suite</a></li>  <li class="file"><a href="/wiki/Network%20Security/3.data-encapsulation/">Network Security #3 Data Encapsulation</a></li>  </ul> 
-                    </li> 
-                    
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
                             Programming
                         </a>
                          <ul class="unstyled" id="tree"> 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             VueJS
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/5.conditional-rendering%20/">VueJS #5 Conditional Rendering</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/conditional-rendering%20/">VueJS #5 Conditional Rendering</a></li>  <li class="file active"><a href="/wiki/Programming/VueJS/lifecycle-hooks/">VueJS #6 Lifecycle Hooks</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -326,7 +326,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/wiki/Programming/VueJS/5.conditional-rendering%20/" class="thumbnail">
+                            <a href="/wiki/Programming/VueJS/lifecycle-hooks/" class="thumbnail">
     <!-- 
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -337,7 +337,26 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
-                            <p class="item-title"><a href="/wiki/Programming/VueJS/5.conditional-rendering%20/" class="title">VueJS #5 Conditional Rendering</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/lifecycle-hooks/" class="title">VueJS #6 Lifecycle Hooks</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T13:00:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/conditional-rendering%20/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/conditional-rendering%20/" class="title">VueJS #5 Conditional Rendering</a></p>
                             <p class="item-date"><time datetime="2024-04-16T11:22:21.000Z" itemprop="datePublished">2024-04-16</time></p>
                         </div>
                     </li>
@@ -345,7 +364,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/wiki/Network%20Security/3.data-encapsulation/" class="thumbnail">
+                            <a href="/wiki/Network%20Security/data-encapsulation/" class="thumbnail">
     <!-- 
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -356,7 +375,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Network-Security/">Network Security</a></p>
-                            <p class="item-title"><a href="/wiki/Network%20Security/3.data-encapsulation/" class="title">Network Security #3 Data Encapsulation</a></p>
+                            <p class="item-title"><a href="/wiki/Network%20Security/data-encapsulation/" class="title">Network Security #3 Data Encapsulation</a></p>
                             <p class="item-date"><time datetime="2024-04-16T05:57:13.000Z" itemprop="datePublished">2024-04-16</time></p>
                         </div>
                     </li>
@@ -364,7 +383,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/wiki/Network%20Security/2-the-internet-protocol-suite/" class="thumbnail">
+                            <a href="/wiki/Network%20Security/the-internet-protocol-suite/" class="thumbnail">
     <!-- 
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -375,7 +394,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Network-Security/">Network Security</a></p>
-                            <p class="item-title"><a href="/wiki/Network%20Security/2-the-internet-protocol-suite/" class="title">Network Security #2 The Internet Protocol Suite</a></p>
+                            <p class="item-title"><a href="/wiki/Network%20Security/the-internet-protocol-suite/" class="title">Network Security #2 The Internet Protocol Suite</a></p>
                             <p class="item-date"><time datetime="2024-04-16T05:21:13.000Z" itemprop="datePublished">2024-04-16</time></p>
                         </div>
                     </li>
@@ -383,7 +402,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/wiki/Network%20Security/1-network-architecture-and-protocols/" class="thumbnail">
+                            <a href="/wiki/Network%20Security/network-architecture-and-protocols/" class="thumbnail">
     <!-- 
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -394,27 +413,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Network-Security/">Network Security</a></p>
-                            <p class="item-title"><a href="/wiki/Network%20Security/1-network-architecture-and-protocols/" class="title">Network Security #1 Network Architecture and Protocols</a></p>
+                            <p class="item-title"><a href="/wiki/Network%20Security/network-architecture-and-protocols/" class="title">Network Security #1 Network Architecture and Protocols</a></p>
                             <p class="item-date"><time datetime="2024-04-16T01:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="thumbnail">
-    <!-- 
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-     -->
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
-                            <p class="item-title"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" class="title">VueJS #4 Rendering Lists 1.1</a></p>
-                            <p class="item-date"><time datetime="2024-04-16T01:12:21.000Z" itemprop="datePublished">2024-04-16</time></p>
                         </div>
                     </li>
                 
@@ -426,7 +426,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-Network Security/1-network-architecture-and-protocols" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Programming/VueJS/lifecycle-hooks" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -436,15 +436,15 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Network-Security/">Network Security</a>
+        <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a>
     </div>
 
                         
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/wiki/Network%20Security/1-network-architecture-and-protocols/">
-            <time datetime="2024-04-16T01:42:21.000Z" itemprop="datePublished">2024-04-16</time>
+        <a href="/wiki/Programming/VueJS/lifecycle-hooks/">
+            <time datetime="2024-04-16T13:00:21.000Z" itemprop="datePublished">2024-04-16</time>
         </a>
     </div>
 
@@ -455,13 +455,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/aritlh/aritlh.github.io/raw/master/source/_posts/Network Security/1-network-architecture-and-protocols.md"> Source </a>
+                                <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/aritlh/aritlh.github.io/raw/master/source/_posts/Programming/VueJS/lifecycle-hooks.md"> Source </a>
                             </div>
                             <!-- <div class="article-meta-button">
-                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/edit/master/source/_posts/Network Security/1-network-architecture-and-protocols.md'> Edit </a>
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/edit/master/source/_posts/Programming/VueJS/lifecycle-hooks.md'> Edit </a>
                             </div> -->
                             <!-- <div class="article-meta-button">
-                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/commits/master/source/_posts/Network Security/1-network-architecture-and-protocols.md'> History </a>
+                                <a target="_blank" rel="noopener" href='https://github.com/aritlh/aritlh.github.io/commits/master/source/_posts/Programming/VueJS/lifecycle-hooks.md'> History </a>
                             </div> -->
                         
                     </div>
@@ -469,7 +469,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Network Security #1 Network Architecture and Protocols
+            VueJS #6 Lifecycle Hooks
         </h1>
     
 
@@ -480,23 +480,84 @@
         
         
             
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li></ol>
+                </div>
+            
         
         
-            <p>To attack network protocols, you need to understand the basic of computer networking. The more you understand how common networks are built and function, the easier it will be to apply that knowledge to capturing, analyzing, and exploiting new protocols.</p>
-<p>Let’s start by reviewing some basic networking terminology and asking the fundamental question: “what is a network?”</p>
-<p>A network is a set of two or more computers connected together to share information. It’s common to refer to each connected device as a node on the network to make the description applicalble to a wider range of devices.</p>
-<p><img src="https://i.imgur.com/PEwP15r.png" alt="A simple network of three nodes"></p>
-<p>The figure shows three nodes connected with a common network. Each node might have a different operating system or hardware. But as long as each node follows a set of rules, or network protocol, it can communicate with the other nodes one the network. To communicate correctly, all nodes on a network must understand the the same network protocol.</p>
-<p>A network protocol serves many functions, including one or more of the following:</p>
-<ul>
-<li><strong>Maintaining session state</strong> Protocols typically implement mechanisms to create new connections and terminate existing connections.</li>
-<li><strong>Identifying nodes through addressing</strong> Data must be transmitted to the correct node on a network. Some protocols implement an addressing mechanism to identify specific nodes or groups of nodes.</li>
-<li><strong>Controlling flow</strong> The amount of data transferred across a network is limited. Protocols can implement ways of managing data flow to increase throughput and<br>reduce latency.</li>
-<li><strong>Guaranteeing the order of transmitted data</strong> Many networks do not guarantee that the order in which the data is sent will match the order in which it’s received. A protocol can reorder the data to ensure it’s delivered in the correct order.</li>
-<li><strong>Detecting and correcting errors</strong> Many networks are not 100 percent reliable; data can become corrupted. It’s important to detect corruption and, ideally, correct it.</li>
-<li><strong>Formatting and encoding data</strong> Data isn’t always in a format suitable for transmitting on the network. A protocol can specify ways of encoding data, such as encoding English text into binary values.</li>
-</ul>
+            <p>Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their code at specific stages.</p>
+<h2 id="Registering-Lifecycle-Hooks"><a href="#Registering-Lifecycle-Hooks" class="headerlink" title="Registering Lifecycle Hooks"></a>Registering Lifecycle Hooks</h2><p>For example, the <code>mounted</code> hook can be used to run code after the component has finished the initial rendering and created the DOM nodes:​</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`the component is now mounted.`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
 
+<p>There are also other hooks which will be called at different stages of the instance’s lifecycle, with the most commonly used being <code>mounted</code>, <code>updated</code>, and <code>unmounted</code>.</p>
+<p>All lifecycle hooks are called with their <code>this</code> context pointing to the current active instance invoking it. Note this means you should avoid using arrow functions when declaring lifecycle hooks, as you won’t be able to access the component instance via <code>this</code> if you do so.</p>
+<p>If our project uses the Options API, we don’t have to change any of the code for our Vue lifecycle hooks. This is because Vue 3 is designed to be compatible with prior releases of Vue.</p>
+<p>However, the way we access these hooks is a little bit different when we decide to use the Composition API -  which is especially useful in larger Vue projects.</p>
+<p>By the end of this article, hope you’ll know how to use lifecycle hooks in both the Options API and Composition API and be on your way to writing better code.</p>
+<h2 id="Lifecycle-Diagram"><a href="#Lifecycle-Diagram" class="headerlink" title="Lifecycle Diagram"></a>Lifecycle Diagram</h2><p>Below is a diagram for the instance lifecycle. You don’t need to fully understand everything going on right now, but as you learn and build more, it will be a useful reference.</p>
+<details>
+<summary><b>Open The Diagram<b></b></b></summary>
+
+<p><img src="https://vuejs.org/assets/lifecycle.MuZLBFAS.png" alt="Lifecycle Diagram"></p>
+</details>
+
+<p>Essentially, each main Vue lifecycle event is separated into two hooks that are called right before that event and then right after. There are four main events (8 main hooks) that you can utilize in your Vue app.</p>
+<ul>
+<li><strong>Creation</strong> - runs on your component’s creation</li>
+<li><strong>Mounting</strong> - runs when the DOM is mounted.</li>
+<li><strong>Updates</strong> - runs when reactive data is modified.</li>
+<li><strong>Destruction</strong> - runs right before your element is destroyed.</li>
+</ul>
+<h2 id="Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><a href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API" class="headerlink" title="Using our Vue Lifecycle Hooks in the Options API"></a>Using our Vue Lifecycle Hooks in the Options API</h2><p>With the Options API, our lifecycle hooks are exposed as options on our Vue instance. We don’t need to import anything, just invoke the method and write the code for that.</p>
+<p>For example, let’s say we wanted to access our <code>mounted()</code> and our <code>update()</code> lifecycle hooks. It might look something like this.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;mounted!&#39;</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">updated</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;updated!&#39;</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>See details <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/options-lifecycle.html">Options API Lifecycle Hooks</a>.</p>
+<h2 id="Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><a href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API" class="headerlink" title="Using our Vue Lifecycle Hooks in the Vue Composition API"></a>Using our Vue Lifecycle Hooks in the Vue Composition API</h2><blockquote>
+<p><strong><em>Usage Note</em></strong></p>
+<p><em>All APIs listed on this page must be called synchronously during the <code>setup()</code> phase of a component. See <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/essentials/lifecycle.html">Guide - Lifecycle Hooks</a> for more details.</em></p>
+</blockquote>
+<p>In the Composition API, we’ve to import lifecycle hooks into our project before we can use them. This is to help keep projects as lightweight as possible.</p>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span></code></pre></div></div></figure>
+
+<p>Excluding <code>beforeCreate</code> and <code>created</code> (which are replaced by the <code>setup</code> method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.</p>
+<p>See details <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/composition-api-lifecycle.html">Composition API Lifecycle Hooks</a>.</p>
+<p>When we import them and access them in our code, it would look like this.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E"> </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`the component is now mounted.`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">})</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>without <code>setup</code></p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;mounted in the composition api!&#39;</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">    })</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
             </div>
         
         <footer class="article-footer">
@@ -508,19 +569,10 @@
     
 <nav id="article-nav">
     
-        <a href="/wiki/Network%20Security/2-the-internet-protocol-suite/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Network Security #2 The Internet Protocol Suite
-                
-            </div>
-        </a>
     
-    
-        <a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/wiki/Programming/VueJS/conditional-rendering%20/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">VueJS #4 Rendering Lists 1.1</div>
+            <div class="article-nav-title">VueJS #5 Conditional Rendering</div>
         </a>
     
 </nav>
@@ -568,9 +620,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://aritlh.github.io/wiki/Network%20Security/1-network-architecture-and-protocols/';
+            this.page.url = 'http://aritlh.github.io/wiki/Programming/VueJS/lifecycle-hooks/';
         
-        this.page.identifier = 'Network Security/1-network-architecture-and-protocols';
+        this.page.identifier = 'Programming/VueJS/lifecycle-hooks';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

@@ -6,7 +6,7 @@
   <link href="http://aritlh.github.io/atom.xml" rel="self"/>
   
   <link href="http://aritlh.github.io/"/>
-  <updated>2024-04-16T11:35:17.273Z</updated>
+  <updated>2024-04-16T13:44:52.023Z</updated>
   <id>http://aritlh.github.io/</id>
   
   <author>
@@ -17,9 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VueJS #6 Lifecycle Hooks</title>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/lifecycle-hooks/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/lifecycle-hooks/</id>
+    <published>2024-04-16T13:00:21.000Z</published>
+    <updated>2024-04-16T13:44:52.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their code at specific stages.</p><h2 id="Registering-Lifecycle-Hooks"><a href="#Registering-Lifecycle-Hooks" class="headerlink" title="Registering Lifecycle Hooks"></a>Registering Lifecycle Hooks</h2><p>For example, the <code>mounted</code> hook can be used to run code after the component has finished the initial rendering and created the DOM nodes:​</p><figure class="shiki js"><div class='codeblock'><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span><span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #24292E">() {</span></span><span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`the component is now mounted.`</span><span style="color: #24292E">)</span></span><span class="line"><span style="color: #24292E">  }</span></span><span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure><p>There are also other hooks which will be called at different stages of the instance’s lifecycle, with the most commonly used being <code>mounted</code>, <code>updated</code>, and <code>unmounted</code>.</p><p>All lifecycle hooks are called with their <code>this</code> context pointing to the current active instance invoking it. Note this means you should avoid using arrow functions when declaring lifecycle hooks, as you won’t be able to access the component instance via <code>this</code> if you do so.</p><p>If our project uses the Options API, we don’t have to change any of the code for our Vue lifecycle hooks. This is because Vue 3 is designed to be compatible with prior releases of Vue.</p><p>However, the way we access these hooks is a little bit different when we decide to use the Composition API -  which is especially useful in larger Vue projects.</p><p>By the end of this article, hope you’ll know how to use lifecycle hooks in both the Options API and Composition API and be on your way to writing better code.</p><h2 id="Lifecycle-Diagram"><a href="#Lifecycle-Diagram" class="headerlink" title="Lifecycle Diagram"></a>Lifecycle Diagram</h2><p>Below is a diagram for the instance lifecycle. You don’t need to fully understand everything going on right now, but as you learn and build more, it will be a useful reference.</p><details><summary><b>Open The Diagram<b></summary><p><img src="https://vuejs.org/assets/lifecycle.MuZLBFAS.png" alt="Lifecycle Diagram"></p></details><p>Essentially, each main Vue lifecycle event is separated into two hooks that are called right before that event and then right after. There are four main events (8 main hooks) that you can utilize in your Vue app.</p><ul><li><strong>Creation</strong> - runs on your component’s creation</li><li><strong>Mounting</strong> - runs when the DOM is mounted.</li><li><strong>Updates</strong> - runs when reactive data is modified.</li><li><strong>Destruction</strong> - runs right before your element is destroyed.</li></ul><h2 id="Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><a href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API" class="headerlink" title="Using our Vue Lifecycle Hooks in the Options API"></a>Using our Vue Lifecycle Hooks in the Options API</h2><p>With the Options API, our lifecycle hooks are exposed as options on our Vue instance. We don’t need to import anything, just invoke the method and write the code for that.</p><p>For example, let’s say we wanted to access our <code>mounted()</code> and our <code>update()</code> lifecycle hooks. It might look something like this.</p><figure class="shiki vue"><div class='codeblock'><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span><span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #24292E">() {</span></span><span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;mounted!&#39;</span><span style="color: #24292E">)</span></span><span class="line"><span style="color: #24292E">  },</span></span><span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">updated</span><span style="color: #24292E">() {</span></span><span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;updated!&#39;</span><span style="color: #24292E">)</span></span><span class="line"><span style="color: #24292E">  },</span></span><span class="line"><span style="color: #24292E">}</span></span><span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure><p>See details <a href="https://vuejs.org/api/options-lifecycle.html">Options API Lifecycle Hooks</a>.</p><h2 id="Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><a href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API" class="headerlink" title="Using our Vue Lifecycle Hooks in the Vue Composition API"></a>Using our Vue Lifecycle Hooks in the Vue Composition API</h2><blockquote><p><strong><em>Usage Note</em></strong></p><p><em>All APIs listed on this page must be called synchronously during the <code>setup()</code> phase of a component. See <a href="https://vuejs.org/guide/essentials/lifecycle.html">Guide - Lifecycle Hooks</a> for more details.</em></p></blockquote><p>In the Composition API, we’ve to import lifecycle hooks into our project before we can use them. This is to help keep projects as lightweight as possible.</p><figure class="shiki js"><div class='codeblock'><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span></code></pre></div></div></figure><p>Excluding <code>beforeCreate</code> and <code>created</code> (which are replaced by the <code>setup</code> method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.</p><p>See details <a href="https://vuejs.org/api/composition-api-lifecycle.html">Composition API Lifecycle Hooks</a>.</p><p>When we import them and access them in our code, it would look like this.</p><figure class="shiki vue"><div class='codeblock'><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E"> </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">&gt;</span></span><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span><span class="line"></span><span class="line"><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span><span class="line"><span style="color: #24292E">  console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`the component is now mounted.`</span><span style="color: #24292E">)</span></span><span class="line"><span style="color: #24292E">})</span></span><span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure><p>without <code>setup</code></p><figure class="shiki vue"><div class='codeblock'><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span><span class="line"></span><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span><span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">() {</span></span><span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span><span class="line"><span style="color: #24292E">      console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;mounted in the composition api!&#39;</span><span style="color: #24292E">)</span></span><span class="line"><span style="color: #24292E">    })</span></span><span class="line"><span style="color: #24292E">  },</span></span><span class="line"><span style="color: #24292E">}</span></span><span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observ</summary>
+      
+    
+    
+    
+    <category term="Programming" scheme="http://aritlh.github.io/categories/Programming/"/>
+    
+    <category term="VueJS" scheme="http://aritlh.github.io/categories/Programming/VueJS/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>VueJS #5 Conditional Rendering</title>
-    <link href="http://aritlh.github.io/wiki/Programming/VueJS/5.conditional-rendering%20/"/>
-    <id>http://aritlh.github.io/wiki/Programming/VueJS/5.conditional-rendering%20/</id>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/conditional-rendering%20/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/conditional-rendering%20/</id>
     <published>2024-04-16T11:22:21.000Z</published>
     <updated>2024-04-16T11:35:17.273Z</updated>
     
@@ -42,8 +66,8 @@
   
   <entry>
     <title>Network Security #3 Data Encapsulation</title>
-    <link href="http://aritlh.github.io/wiki/Network%20Security/3.data-encapsulation/"/>
-    <id>http://aritlh.github.io/wiki/Network%20Security/3.data-encapsulation/</id>
+    <link href="http://aritlh.github.io/wiki/Network%20Security/data-encapsulation/"/>
+    <id>http://aritlh.github.io/wiki/Network%20Security/data-encapsulation/</id>
     <published>2024-04-16T05:57:13.000Z</published>
     <updated>2024-04-16T11:19:27.633Z</updated>
     
@@ -64,8 +88,8 @@
   
   <entry>
     <title>Network Security #2 The Internet Protocol Suite</title>
-    <link href="http://aritlh.github.io/wiki/Network%20Security/2-the-internet-protocol-suite/"/>
-    <id>http://aritlh.github.io/wiki/Network%20Security/2-the-internet-protocol-suite/</id>
+    <link href="http://aritlh.github.io/wiki/Network%20Security/the-internet-protocol-suite/"/>
+    <id>http://aritlh.github.io/wiki/Network%20Security/the-internet-protocol-suite/</id>
     <published>2024-04-16T05:21:13.000Z</published>
     <updated>2024-04-16T05:46:36.600Z</updated>
     
@@ -86,8 +110,8 @@
   
   <entry>
     <title>Network Security #1 Network Architecture and Protocols</title>
-    <link href="http://aritlh.github.io/wiki/Network%20Security/1-network-architecture-and-protocols/"/>
-    <id>http://aritlh.github.io/wiki/Network%20Security/1-network-architecture-and-protocols/</id>
+    <link href="http://aritlh.github.io/wiki/Network%20Security/network-architecture-and-protocols/"/>
+    <id>http://aritlh.github.io/wiki/Network%20Security/network-architecture-and-protocols/</id>
     <published>2024-04-16T01:42:21.000Z</published>
     <updated>2024-04-16T05:50:46.064Z</updated>
     
@@ -108,8 +132,8 @@
   
   <entry>
     <title>VueJS #4 Rendering Lists 1.1</title>
-    <link href="http://aritlh.github.io/wiki/Programming/VueJS/4.rendering-lists.1.1/"/>
-    <id>http://aritlh.github.io/wiki/Programming/VueJS/4.rendering-lists.1.1/</id>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists.1.1/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists.1.1/</id>
     <published>2024-04-16T01:12:21.000Z</published>
     <updated>2024-04-16T05:19:05.540Z</updated>
     
@@ -132,8 +156,8 @@
   
   <entry>
     <title>VueJS #3 Rendering Lists 1.0</title>
-    <link href="http://aritlh.github.io/wiki/Programming/VueJS/3-rendering-lists-1.0/"/>
-    <id>http://aritlh.github.io/wiki/Programming/VueJS/3-rendering-lists-1.0/</id>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists-1.0/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists-1.0/</id>
     <published>2024-04-16T00:42:21.000Z</published>
     <updated>2024-04-16T01:45:12.860Z</updated>
     
@@ -156,8 +180,8 @@
   
   <entry>
     <title>VueJS #2 App Configurations</title>
-    <link href="http://aritlh.github.io/wiki/Programming/VueJS/2-app-configurations/"/>
-    <id>http://aritlh.github.io/wiki/Programming/VueJS/2-app-configurations/</id>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/app-configurations/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/app-configurations/</id>
     <published>2024-04-15T21:00:21.000Z</published>
     <updated>2024-04-16T00:40:13.897Z</updated>
     
@@ -180,8 +204,8 @@
   
   <entry>
     <title>VueJS #1 Fundamental Topics</title>
-    <link href="http://aritlh.github.io/wiki/Programming/VueJS/1-fundamental-topics/"/>
-    <id>http://aritlh.github.io/wiki/Programming/VueJS/1-fundamental-topics/</id>
+    <link href="http://aritlh.github.io/wiki/Programming/VueJS/fundamental-topics/"/>
+    <id>http://aritlh.github.io/wiki/Programming/VueJS/fundamental-topics/</id>
     <published>2024-04-15T09:38:54.000Z</published>
     <updated>2024-04-16T02:15:29.633Z</updated>
     

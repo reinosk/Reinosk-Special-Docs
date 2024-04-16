@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/VueJS/5.conditional-rendering%20/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/lifecycle-hooks/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Network%20Security/3.data-encapsulation/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/conditional-rendering%20/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Network%20Security/1-network-architecture-and-protocols/</loc>
+    <loc>http://aritlh.github.io/wiki/Network%20Security/data-encapsulation/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Network%20Security/2-the-internet-protocol-suite/</loc>
+    <loc>http://aritlh.github.io/wiki/Network%20Security/network-architecture-and-protocols/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/VueJS/4.rendering-lists.1.1/</loc>
+    <loc>http://aritlh.github.io/wiki/Network%20Security/the-internet-protocol-suite/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/VueJS/1-fundamental-topics/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists.1.1/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/VueJS/3-rendering-lists-1.0/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/fundamental-topics/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -65,7 +65,16 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/wiki/Programming/VueJS/2-app-configurations/</loc>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/rendering-lists-1.0/</loc>
+    
+    <lastmod>2024-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://aritlh.github.io/wiki/Programming/VueJS/app-configurations/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -151,14 +160,14 @@
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Technology-Development/</loc>
+    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/Vulnhub/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aritlh.github.io/categories/Hacking-Walkthrough/Vulnhub/</loc>
+    <loc>http://aritlh.github.io/categories/Technology-Development/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
