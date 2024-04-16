@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.imgur.com/umgtap6.png">
 <meta property="article:published_time" content="2024-04-16T05:57:13.000Z">
-<meta property="article:modified_time" content="2024-04-16T06:12:58.170Z">
+<meta property="article:modified_time" content="2024-04-16T11:19:27.633Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/umgtap6.png">
@@ -227,7 +227,7 @@
                             &nbsp;
                             VueJS
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/Programming/VueJS/1-fundamental-topics/">VueJS #1 Fundamental Topics</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/2-app-configurations/">VueJS #2 App Configurations</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/">VueJS #3 Rendering Lists 1.0</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/4.rendering-lists.1.1/">VueJS #4 Rendering Lists 1.1</a></li>  <li class="file"><a href="/wiki/Programming/VueJS/5.conditional-rendering%20/">VueJS #5 Conditional Rendering</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -326,6 +326,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/wiki/Programming/VueJS/5.conditional-rendering%20/" class="thumbnail">
+    <!-- 
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+     -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
+                            <p class="item-title"><a href="/wiki/Programming/VueJS/5.conditional-rendering%20/" class="title">VueJS #5 Conditional Rendering</a></p>
+                            <p class="item-date"><time datetime="2024-04-16T11:22:21.000Z" itemprop="datePublished">2024-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/wiki/Network%20Security/3.data-encapsulation/" class="thumbnail">
     <!-- 
     
@@ -399,25 +418,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="thumbnail">
-    <!-- 
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-     -->
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/VueJS/">VueJS</a></p>
-                            <p class="item-title"><a href="/wiki/Programming/VueJS/3-rendering-lists-1.0/" class="title">VueJS #3 Rendering Lists 1.0</a></p>
-                            <p class="item-date"><time datetime="2024-04-16T00:42:21.000Z" itemprop="datePublished">2024-04-16</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -485,9 +485,9 @@
             <p>Each layer in the IPS is built on the one below, and each layer is able to encapsulate the data from the layer above so it can move between the layers. Data transmitted by each layer is called a protocol data unit (PDU).</p>
 <h2 id="Headers-Footers-and-Addresses"><a href="#Headers-Footers-and-Addresses" class="headerlink" title="Headers, Footers, and Addresses"></a>Headers, Footers, and Addresses</h2><p>The PDU in each layer contains the payload data that is being transmitted. It’s commont to prefix a header–which contains information required for the payload data to be transmitted, such as the addresses of the source and destination nodes on the network–to the payload data. Sometimes a PDU also has a footer that is suffixed to the payload data and contains values needed to ensure correct transmission, such as error-checking information. Figure below shows how the PDUs are laid out in the IPS.</p>
 <p><img src="https://i.imgur.com/umgtap6.png" alt="IPS Data Encapsulation"></p>
-<p>The TCP header contains a source destination port number ➊. These port numbers allow a single node to have multiple unique network connections. Port numbers for TCP (and UDP) range from <strong><ins>0 to 65535</ins></strong>. Most port numbers are assigned as needed to new connections, but some numbers have been given special assignments, such as poort 80 for HTTP. (You can find a current list of assigned port numbers in the <code>/etc/services</code> file on most Unix-like OS.) A TCP payload and header are commonly called segment, whereas a UDP payload and header are commonly called a datagram.</p>
+<p>The TCP header contains a source destination port number ➊. These port numbers allow a single node to have multiple unique network connections. Port numbers for TCP (and UDP) range from <ins>0 to 65535</ins>. Most port numbers are assigned as needed to new connections, but some numbers have been given special assignments, such as poort 80 for HTTP. (You can find a current list of assigned port numbers in the <code>/etc/services</code> file on most Unix-like OS.) A TCP payload and header are commonly called segment, whereas a UDP payload and header are commonly called a datagram.</p>
 <p>The IP protocol uses a source and a destination address ➋. The destination address allows the data to be sent to a specific node on the network. The source address allows the receiver of the data to know which node sent the data and allows the receiver to reply to the sender.</p>
-<p>IPv4 uses 32-bit addresses, which you’ll typically ssee written as four number separated by dots, such as 192.168.10.1. IPv6 uses 128-bit addressses, because 32-bit addresses aren’t sufficient for the number of nodes on modern networks. IPv6 addresses are usually written as hexadecimal numbers separated by colons, such as fe80:0000:0000:0000:897b:581e:44b0:2057. Long strings of 0000 numbers are collapsed into two colons. For example, the preceding IPv6 address can also be written as fe80::897b:581e:44b0:2057. An IP payload and header are commonly called a packet.</p>
+<p>IPv4 uses 32-bit addresses, which you’ll typically ssee written as four number separated by dots, such as 192.168.10.1. IPv6 uses 128-bit addresses, because 32-bit addresses aren’t sufficient for the number of nodes on modern networks. IPv6 addresses are usually written as hexadecimal numbers separated by colons, such as fe80:0000:0000:0000:897b:581e:44b0:2057. Long strings of 0000 numbers are collapsed into two colons. For example, the preceding IPv6 address can also be written as fe80::897b:581e:44b0:2057. An IP payload and header are commonly called a packet.</p>
 <p>Ethernet also contains source and destination addresses ➌. Ethernet uses a 64-bit value called a Media Access Control (MAC) address, which is typically set during manufacture of the Ethernet adapter. You’ll usually see MAC addresses written as a series of hexadecimal numbers separated by dashes or colons, such as 0A-00-27-00-00-0E. The Ethernet payload, including the header and footer, is commonly referred to as a frame.</p>
 
             </div>
@@ -500,6 +500,15 @@
 
     
 <nav id="article-nav">
+    
+        <a href="/wiki/Programming/VueJS/5.conditional-rendering%20/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    VueJS #5 Conditional Rendering
+                
+            </div>
+        </a>
     
     
         <a href="/wiki/Network%20Security/2-the-internet-protocol-suite/" id="article-nav-older" class="article-nav-link-wrap">
@@ -514,6 +523,12 @@
 
 
     
+    
+        <section id="comments"> 
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+ </section>
     
 
 
@@ -542,6 +557,23 @@
 </footer>
 
         
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://aritlh.github.io/wiki/Network%20Security/3.data-encapsulation/';
+        
+        this.page.identifier = 'Network Security/3.data-encapsulation';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'aritlh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
 
     
         
