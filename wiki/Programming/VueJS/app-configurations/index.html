@@ -17,7 +17,7 @@
 <meta property="og:description" content="Every application instance exposes a config object that contains the configuration settings for that application. You can modify its properties before mounting your application. Application APICreateA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-15T21:00:21.000Z">
-<meta property="article:modified_time" content="2024-04-16T00:40:13.897Z">
+<meta property="article:modified_time" content="2024-04-17T11:19:27.113Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
     
@@ -564,7 +564,7 @@
         
         
             <p>Every application instance exposes a <code>config</code> object that contains the configuration settings for that application. You can modify its properties before mounting your application.</p>
-<h2 id="Application-API"><a href="#Application-API" class="headerlink" title="Application API"></a>Application API</h2><h3 id="CreateApp"><a href="#CreateApp" class="headerlink" title="CreateApp()"></a>CreateApp()</h3><p>Creates an application instance.</p>
+<h2 id="Application-API"><a href="#Application-API" class="headerlink" title="Application API"></a>Application API</h2><h3 id="CreateApp"><a href="#CreateApp" class="headerlink" title="CreateApp()"></a><code>CreateApp()</code></h3><p>Creates an application instance.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -590,8 +590,8 @@
 <span class="line"></span>
 <span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">(App)</span></span></code></pre></div></div></figure>
 
-<h3 id="createSSRApp"><a href="#createSSRApp" class="headerlink" title="createSSRApp()"></a>createSSRApp()</h3><p>​Creates an application instance in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr#client-hydration">SSR Hydration</a> mode. Usage is exactly the same as <code>createApp()</code>.</p>
-<h3 id="app-mount"><a href="#app-mount" class="headerlink" title="app.mount()"></a>app.mount()</h3><p>​Mounts the application instance in a container element.</p>
+<h3 id="createSSRApp"><a href="#createSSRApp" class="headerlink" title="createSSRApp()"></a><code>createSSRApp()</code></h3><p>​Creates an application instance in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr#client-hydration">SSR Hydration</a> mode. Usage is exactly the same as <code>createApp()</code>.</p>
+<h3 id="app-mount"><a href="#app-mount" class="headerlink" title="app.mount()"></a><code>app.mount()</code></h3><p>​Mounts the application instance in a container element.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -617,7 +617,7 @@
 <p>Can also mount to an actual DOM element:</p>
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">app.</span><span style="color: #6F42C1">mount</span><span style="color: #24292E">(document.body.firstChild)</span></span></code></pre></div></div></figure>
 
-<h3 id="app-unmount"><a href="#app-unmount" class="headerlink" title="app.unmount()"></a>app.unmount()</h3><p>​Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application’s component tree.</p>
+<h3 id="app-unmount"><a href="#app-unmount" class="headerlink" title="app.unmount()"></a><code>app.unmount()</code></h3><p>​Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application’s component tree.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -625,7 +625,7 @@
 <span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">unmount</span><span style="color: #24292E">()</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span></span>
 <span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
 
-<h3 id="app-component"><a href="#app-component" class="headerlink" title="app.component()"></a>app.component()</h3><p>​Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.</p>
+<h3 id="app-component"><a href="#app-component" class="headerlink" title="app.component()"></a><code>app.component()</code></h3><p>​Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -652,7 +652,7 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/components/registration">Component Registration</a></li>
 </ul>
-<h3 id="app-directive"><a href="#app-directive" class="headerlink" title="app.directive()"></a>app.directive()</h3><p>Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.</p>
+<h3 id="app-directive"><a href="#app-directive" class="headerlink" title="app.directive()"></a><code>app.directive()</code></h3><p>Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -685,7 +685,7 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/custom-directives">Custom Directives</a></li>
 </ul>
-<h3 id="app-use"><a href="#app-use" class="headerlink" title="app.use()"></a>app.use()</h3><p>​Installs a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">plugin</a>.</p>
+<h3 id="app-use"><a href="#app-use" class="headerlink" title="app.use()"></a><code>app.use()</code></h3><p>​Installs a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">plugin</a>.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -714,7 +714,7 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">Plugins</a></li>
 </ul>
-<h3 id="app-mixin"><a href="#app-mixin" class="headerlink" title="app.mixin()"></a>app.mixin()</h3><p>​Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.</p>
+<h3 id="app-mixin"><a href="#app-mixin" class="headerlink" title="app.mixin()"></a><code>app.mixin()</code></h3><p>​Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.</p>
 <blockquote>
 <p><strong><em>Not Recommended</em></strong></p>
 <p><em>Mixins are supported in Vue 3 mainly for backwards compatibility, due to their widespread use in ecosystem libraries. Use of mixins, especially global mixins, should be avoided in application code.</em></p>
@@ -727,7 +727,7 @@
 <span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mixin</span><span style="color: #24292E">(</span><span style="color: #E36209">mixin</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentOptions</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">this</span></span>
 <span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
 
-<h3 id="app-provide"><a href="#app-provide" class="headerlink" title="app.provide()"></a>app.provide()</h3><p>​Provide a value that can be injected in all descendant components within the application.</p>
+<h3 id="app-provide"><a href="#app-provide" class="headerlink" title="app.provide()"></a><code>app.provide()</code></h3><p>​Provide a value that can be injected in all descendant components within the application.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -764,7 +764,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="app-runWithContext-3-3"><a href="#app-runWithContext-3-3" class="headerlink" title="app.runWithContext() 3.3+"></a>app.runWithContext() <code>3.3+</code></h3><p>​Execute a callback with the current app as injection context.</p>
+<h3 id="app-runWithContext-3-3"><a href="#app-runWithContext-3-3" class="headerlink" title="app.runWithContext() 3.3+"></a><code>app.runWithContext()</code> <code>3.3+</code></h3><p>​Execute a callback with the current app as injection context.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -789,7 +789,7 @@
 <span class="line"></span>
 <span class="line"><span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(injected) </span><span style="color: #6A737D">// 1</span></span></code></pre></div></div></figure>
 
-<h3 id="app-version"><a href="#app-version" class="headerlink" title="app.version"></a>app.version</h3><p>​Provides the version of Vue that the application was created with. This is useful inside <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">plugins</a>, where you might need conditional logic based on different Vue versions.</p>
+<h3 id="app-version"><a href="#app-version" class="headerlink" title="app.version"></a><code>app.version</code></h3><p>​Provides the version of Vue that the application was created with. This is useful inside <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/reusability/plugins">plugins</a>, where you might need conditional logic based on different Vue versions.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -813,14 +813,14 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/general#version">Global API - version</a></li>
 </ul>
-<h3 id="app-config"><a href="#app-config" class="headerlink" title="app.config"></a>app.config</h3><p>​Every application instance exposes a <code>config</code> object that contains the configuration settings for that application. You can modify its properties (documented below) before mounting your application.</p>
+<h3 id="app-config"><a href="#app-config" class="headerlink" title="app.config"></a><code>app.config</code></h3><p>​Every application instance exposes a <code>config</code> object that contains the configuration settings for that application. You can modify its properties (documented below) before mounting your application.</p>
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { createApp } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">app</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">createApp</span><span style="color: #24292E">(</span><span style="color: #6A737D">/* ... */</span><span style="color: #24292E">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(app.config)</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-errorHandler"><a href="#app-config-errorHandler" class="headerlink" title="app.config.errorHandler"></a>app.config.errorHandler</h3><p>​Assign a global handler for uncaught errors propagating from within the application.</p>
+<h3 id="app-config-errorHandler"><a href="#app-config-errorHandler" class="headerlink" title="app.config.errorHandler"></a><code>app.config.errorHandler</code></h3><p>​Assign a global handler for uncaught errors propagating from within the application.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -859,7 +859,7 @@
 <span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">// handle error, e.g. report to a service</span></span>
 <span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-warnHandler"><a href="#app-config-warnHandler" class="headerlink" title="app.config.warnHandler"></a>app.config.warnHandler</h3><p>​Assign a custom handler for runtime warnings from Vue.</p>
+<h3 id="app-config-warnHandler"><a href="#app-config-warnHandler" class="headerlink" title="app.config.warnHandler"></a><code>app.config.warnHandler</code></h3><p>​Assign a custom handler for runtime warnings from Vue.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -887,14 +887,14 @@
 <span class="line"><span style="color: #24292E">  </span><span style="color: #6A737D">// `trace` is the component hierarchy trace</span></span>
 <span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-performance"><a href="#app-config-performance" class="headerlink" title="app.config.performance"></a>app.config.performance</h3><p>​Set this to <code>true</code> to enable component init, compile, render and patch performance tracing in the browser devtool performance&#x2F;timeline panel. Only works in development mode and in browsers that support the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark">performance.mark</a> API.</p>
+<h3 id="app-config-performance"><a href="#app-config-performance" class="headerlink" title="app.config.performance"></a><code>app.config.performance</code></h3><p>​Set this to <code>true</code> to enable component init, compile, render and patch performance tracing in the browser devtool performance&#x2F;timeline panel. Only works in development mode and in browsers that support the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark">performance.mark</a> API.</p>
 <ul>
 <li><p><strong>Type:</strong> <code>boolean</code></p>
 </li>
 <li><p><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/best-practices/performance">Guide - Performance</a></p>
 </li>
 </ul>
-<h3 id="app-config-compilerOptions"><a href="#app-config-compilerOptions" class="headerlink" title="app.config.compilerOptions"></a>app.config.compilerOptions</h3><p>​Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/options-rendering#compileroptions"><code>compilerOptions</code> option</a>.</p>
+<h3 id="app-config-compilerOptions"><a href="#app-config-compilerOptions" class="headerlink" title="app.config.compilerOptions"></a><code>app.config.compilerOptions</code></h3><p>​Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/options-rendering#compileroptions"><code>compilerOptions</code> option</a>.</p>
 <blockquote>
 <p><strong><em>Important</em></strong></p>
 <p><em>This config option is only respected when using the full build (i.e. the standalone <code>vue.js</code> that can compile templates in the browser). If you are using the runtime-only build with a build setup, compiler options must be passed to <code>@vue/compiler-dom</code> via build tool configurations instead.</em></p>
@@ -903,7 +903,7 @@
 <li><em>For <code>vite</code>: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options">pass via <code>@vitejs/plugin-vue</code> options</a>.</em></li>
 </ul>
 </blockquote>
-<h3 id="app-config-compilerOptions-isCustomElement"><a href="#app-config-compilerOptions-isCustomElement" class="headerlink" title="app.config.compilerOptions.isCustomElement"></a>app.config.compilerOptions.isCustomElement</h3><p>​Specifies a check method to recognize native custom elements.</p>
+<h3 id="app-config-compilerOptions-isCustomElement"><a href="#app-config-compilerOptions-isCustomElement" class="headerlink" title="app.config.compilerOptions.isCustomElement"></a><code>app.config.compilerOptions.isCustomElement</code></h3><p>​Specifies a check method to recognize native custom elements.</p>
 <ul>
 <li><p><strong>Type:</strong> <code>(tag: string) =&gt; boolean</code></p>
 </li>
@@ -923,7 +923,7 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/extras/web-components">Vue and Web Components</a></li>
 </ul>
-<h3 id="app-config-compilerOptions-whitespace"><a href="#app-config-compilerOptions-whitespace" class="headerlink" title="app.config.compilerOptions.whitespace"></a>app.config.compilerOptions.whitespace</h3><p>​Adjusts template whitespace handling behavior.</p>
+<h3 id="app-config-compilerOptions-whitespace"><a href="#app-config-compilerOptions-whitespace" class="headerlink" title="app.config.compilerOptions.whitespace"></a><code>app.config.compilerOptions.whitespace</code></h3><p>​Adjusts template whitespace handling behavior.</p>
 <ul>
 <li><p><strong>Type:</strong> <code>&#39;condense&#39; | &#39;preserve&#39;</code></p>
 </li>
@@ -944,7 +944,7 @@
 </ul>
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">app.config.compilerOptions.whitespace </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;preserve&#39;</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-compilerOptions-delimiters"><a href="#app-config-compilerOptions-delimiters" class="headerlink" title="app.config.compilerOptions.delimiters"></a>app.config.compilerOptions.delimiters</h3><p>​Adjusts the delimiters used for text interpolation within the template.</p>
+<h3 id="app-config-compilerOptions-delimiters"><a href="#app-config-compilerOptions-delimiters" class="headerlink" title="app.config.compilerOptions.delimiters"></a><code>app.config.compilerOptions.delimiters</code></h3><p>​Adjusts the delimiters used for text interpolation within the template.</p>
 <ul>
 <li><p><strong>Type:</strong> <code>[string, string]</code></p>
 </li>
@@ -960,7 +960,7 @@
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #6A737D">// Delimiters changed to ES6 template string style</span></span>
 <span class="line"><span style="color: #24292E">app.config.compilerOptions.delimiters </span><span style="color: #D73A49">=</span><span style="color: #24292E"> [</span><span style="color: #032F62">&#39;${&#39;</span><span style="color: #24292E">, </span><span style="color: #032F62">&#39;}&#39;</span><span style="color: #24292E">]</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-compilerOptions-comments"><a href="#app-config-compilerOptions-comments" class="headerlink" title="app.config.compilerOptions.comments"></a>app.config.compilerOptions.comments</h3><p>​Adjusts treatment of HTML comments in templates.</p>
+<h3 id="app-config-compilerOptions-comments"><a href="#app-config-compilerOptions-comments" class="headerlink" title="app.config.compilerOptions.comments"></a><code>app.config.compilerOptions.comments</code></h3><p>​Adjusts treatment of HTML comments in templates.</p>
 <ul>
 <li><p><strong>Type:</strong> <code>boolean</code></p>
 </li>
@@ -975,7 +975,7 @@
 </ul>
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">app.config.compilerOptions.comments </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #005CC5">true</span></span></code></pre></div></div></figure>
 
-<h3 id="app-config-globalProperties"><a href="#app-config-globalProperties" class="headerlink" title="app.config.globalProperties"></a>app.config.globalProperties</h3><p>​An object that can be used to register global properties that can be accessed on any component instance inside the application.</p>
+<h3 id="app-config-globalProperties"><a href="#app-config-globalProperties" class="headerlink" title="app.config.globalProperties"></a><code>app.config.globalProperties</code></h3><p>​An object that can be used to register global properties that can be accessed on any component instance inside the application.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>
@@ -1003,7 +1003,7 @@
 <ul>
 <li><strong>See also</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/typescript/options-api#augmenting-global-properties">Guide - Augmenting Global Properties <code>TS</code></a></li>
 </ul>
-<h3 id="app-config-optionMergeStrategies"><a href="#app-config-optionMergeStrategies" class="headerlink" title="app.config.optionMergeStrategies"></a>app.config.optionMergeStrategies</h3><p>​An object for defining merging strategies for custom component options.</p>
+<h3 id="app-config-optionMergeStrategies"><a href="#app-config-optionMergeStrategies" class="headerlink" title="app.config.optionMergeStrategies"></a><code>app.config.optionMergeStrategies</code></h3><p>​An object for defining merging strategies for custom component options.</p>
 <ul>
 <li><strong>Type</strong></li>
 </ul>

@@ -21,8 +21,11 @@
 <meta property="og:image" content="https://i.imgur.com/K7Cnypd.png">
 <meta property="og:image" content="https://i.imgur.com/cdV98eQ.png">
 <meta property="og:image" content="https://i.imgur.com/2xveaxk.png">
+<meta property="og:image" content="https://i.imgur.com/byIaTbY.png">
+<meta property="og:image" content="https://i.imgur.com/AQ8JcTL.png">
+<meta property="og:image" content="https://i.imgur.com/zvAyyzr.png">
 <meta property="article:published_time" content="2024-04-16T13:00:21.000Z">
-<meta property="article:modified_time" content="2024-04-17T01:53:58.137Z">
+<meta property="article:modified_time" content="2024-04-17T12:10:15.910Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
@@ -564,7 +567,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#An-In-Depth-Look-at-Each-Lifecycle-Hook"><span class="toc-number">5.</span> <span class="toc-text">An In-Depth Look at Each Lifecycle Hook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creation-Hooks-The-Start-of-the-VueJS-Lifecycle"><span class="toc-number">6.</span> <span class="toc-text">Creation Hooks - The Start of the VueJS Lifecycle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate-Options-API"><span class="toc-number">6.1.</span> <span class="toc-text">beforeCreate() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created-Options-API"><span class="toc-number">6.2.</span> <span class="toc-text">created() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-about-the-Composition-API-Creation-Hooks"><span class="toc-number">6.3.</span> <span class="toc-text">What about the Composition API Creation Hooks?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mounting-Hooks-%E2%80%93-Accessing-the-DOM"><span class="toc-number">7.</span> <span class="toc-text">Mounting Hooks – Accessing the DOM</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#An-In-Depth-Look-at-Each-Lifecycle-Hook"><span class="toc-number">5.</span> <span class="toc-text">An In-Depth Look at Each Lifecycle Hook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creation-Hooks-The-Start-of-the-VueJS-Lifecycle"><span class="toc-number">6.</span> <span class="toc-text">Creation Hooks - The Start of the VueJS Lifecycle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate-Options-API"><span class="toc-number">6.1.</span> <span class="toc-text">beforeCreate() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created-Options-API"><span class="toc-number">6.2.</span> <span class="toc-text">created() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-about-the-Composition-API-Creation-Hooks"><span class="toc-number">6.3.</span> <span class="toc-text">What about the Composition API Creation Hooks?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mounting-Hooks-%E2%80%93-Accessing-the-DOM"><span class="toc-number">7.</span> <span class="toc-text">Mounting Hooks – Accessing the DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeMount-and-onBeforeMount"><span class="toc-number">7.1.</span> <span class="toc-text">beforeMount() and onBeforeMount()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mounted-and-onMounted"><span class="toc-number">7.2.</span> <span class="toc-text">mounted() and onMounted()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update-Hooks-%E2%80%93-Reactivity-in-the-VueJS-Lifecycle"><span class="toc-number">8.</span> <span class="toc-text">Update Hooks – Reactivity in the VueJS Lifecycle</span></a></li></ol>
                 </div>
             
         
@@ -695,7 +698,163 @@
 <span class="line"></span>
 <span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
 <p><img src="https://i.imgur.com/2xveaxk.png" alt="Composition API Creation Hooks"></p>
-<h2 id="Mounting-Hooks-–-Accessing-the-DOM"><a href="#Mounting-Hooks-–-Accessing-the-DOM" class="headerlink" title="Mounting Hooks – Accessing the DOM"></a>Mounting Hooks – Accessing the DOM</h2><p>progress ..</p>
+<h2 id="Mounting-Hooks-–-Accessing-the-DOM"><a href="#Mounting-Hooks-–-Accessing-the-DOM" class="headerlink" title="Mounting Hooks – Accessing the DOM"></a>Mounting Hooks – Accessing the DOM</h2><p>These mounting hooks handle mounting and rendering the component. These are some of the most commonly used hooks in projects and applications.</p>
+<h3 id="beforeMount-and-onBeforeMount"><a href="#beforeMount-and-onBeforeMount" class="headerlink" title="beforeMount() and onBeforeMount()"></a><code>beforeMount()</code> and <code>onBeforeMount()</code></h3><p>Registers a hook to be called right before the component is to be mounted.</p>
+<details>
+<summary><b>Options API<b></b></b></summary>
+
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentOptions</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">beforeMount</span><span style="color: #D73A49">?</span><span style="color: #24292E">(</span><span style="color: #005CC5">this</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentPublicInstance</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.</p>
+<blockquote>
+<p><strong><em>This hook is not called during server-side rendering.</em></strong></p>
+</blockquote>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">beforeMount</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #005CC5">this</span><span style="color: #24292E">.$el)</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<p><img src="https://i.imgur.com/byIaTbY.png" alt="beforeMount()"></p>
+</details>
+
+<details>
+<summary><b>Composition API<b></b></b></summary>
+
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">onBeforeMount</span><span style="color: #24292E">(</span><span style="color: #6F42C1">callback</span><span style="color: #D73A49">:</span><span style="color: #24292E"> () </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.</p>
+<blockquote>
+<p><strong><em>This hook is not called during server-side rendering.</em></strong></p>
+</blockquote>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">  &lt;</span><span style="color: #22863A">div</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ref</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;root&quot;</span><span style="color: #24292E">&gt;Hello World&lt;/</span><span style="color: #22863A">div</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { ref, onBeforeMount } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">root</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ref</span><span style="color: #24292E">(</span><span style="color: #005CC5">null</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">onBeforeMount</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(root.value)</span></span>
+<span class="line"><span style="color: #24292E">    })</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      root,</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">beforeMount</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #005CC5">this</span><span style="color: #24292E">.$el)</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p><img src="https://i.imgur.com/AQ8JcTL.png" alt="onBeforeMount()"></p>
+</details>
+
+<p>Then, the corresponding script to try and access the ref.</p>
+<p>Since, <code>app.$el</code> isn’t yet created, the output will be undefined.</p>
+<p>While it’s preferred that you use <code>created()</code>&#x2F;<code>setup()</code> to perform your API calls, this is really the last step you should call them before it’s unnecessary late in the process because it’s right after created — they have access to the same component variables.</p>
+<h3 id="mounted-and-onMounted"><a href="#mounted-and-onMounted" class="headerlink" title="mounted() and onMounted()"></a><code>mounted()</code> and <code>onMounted()</code></h3><p>Register a callback to be called after the component has been mounted</p>
+<details>
+<summary><b>Options API<b></b></b></summary>
+
+<ul>
+<li><strong>Type</strong></li>
+</ul>
+<figure class="shiki ts"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">interface</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentOptions</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #D73A49">?</span><span style="color: #24292E">(</span><span style="color: #005CC5">this</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ComponentPublicInstance</span><span style="color: #24292E">)</span><span style="color: #D73A49">:</span><span style="color: #24292E"> </span><span style="color: #005CC5">void</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>A component is considered mounted after:</p>
+<ul>
+<li>All of its synchronous child components have been mounted (does not include async components or components inside <code>&lt;Suspense&gt;</code> trees).</li>
+<li>Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component’s DOM tree is in-document if the application’s root container is also in-document.</li>
+</ul>
+<p>This hook is typically used for performing side effects that need access to the component’s rendered DOM, or for limiting DOM-related code to the client in a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr">server-rendered application</a>.</p>
+<blockquote>
+<p><strong><em>This hook is not called during server-side rendering.</em></strong></p>
+</blockquote>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">mounted</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #005CC5">this</span><span style="color: #24292E">.$el)</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span></code></pre></div></div></figure>
+
+<p><img src="https://i.imgur.com/zvAyyzr.png" alt="mounted()"></p>
+</details>
+
+<details>
+<summary><b>Composition API<b></b></b></summary>
+
+<ul>
+<li><strong>Details</strong></li>
+</ul>
+<p>A component is considered mounted after:</p>
+<ul>
+<li>All of its synchronous child components have been mounted (does not include async components or components inside <code>&lt;Suspense&gt;</code> trees).</li>
+<li>Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component’s DOM tree is in-document if the application’s root container is also in-document.</li>
+<li>This hook is typically used for performing side effects that need access to the component’s rendered DOM, or for limiting DOM-related code to the client in a <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/guide/scaling-up/ssr.html">server-rendered application</a>.</li>
+</ul>
+<blockquote>
+<p><strong><em>This hook is not called during server-side rendering.</em></strong></p>
+</blockquote>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { ref, onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6A737D">/* Composition API */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">root</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ref</span><span style="color: #24292E">(</span><span style="color: #005CC5">null</span><span style="color: #24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(root.value)</span></span>
+<span class="line"><span style="color: #24292E">    })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      root,</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">![onMounted()](https://i.imgur.com/czTBiN8.png)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+</details>
+
+<h2 id="Update-Hooks-–-Reactivity-in-the-VueJS-Lifecycle"><a href="#Update-Hooks-–-Reactivity-in-the-VueJS-Lifecycle" class="headerlink" title="Update Hooks – Reactivity in the VueJS Lifecycle"></a>Update Hooks – Reactivity in the VueJS Lifecycle</h2><p>Progress ..</p>
 
             </div>
         
