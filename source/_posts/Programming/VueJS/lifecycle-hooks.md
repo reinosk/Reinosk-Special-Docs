@@ -185,5 +185,177 @@ export default {
 ![Composition API Creation Hooks](https://i.imgur.com/2xveaxk.png)
 
 ## Mounting Hooks – Accessing the DOM
+These mounting hooks handle mounting and rendering the component. These are some of the most commonly used hooks in projects and applications.
 
-progress ..
+### `beforeMount()` and `onBeforeMount()`
+
+Registers a hook to be called right before the component is to be mounted.
+
+<details>
+<summary><b>Options API<b></summary>
+
+- **Type**
+
+```ts
+interface ComponentOptions {
+  beforeMount?(this: ComponentPublicInstance): void
+}
+```
+
+- **Details**
+
+When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.
+
+> **_This hook is not called during server-side rendering._**
+
+- **Example**
+
+```js
+export default {
+  beforeMount() {
+    console.log(this.$el)
+  },
+}
+```
+
+![beforeMount()](https://i.imgur.com/byIaTbY.png)
+
+</details>
+
+<details>
+<summary><b>Composition API<b></summary>
+
+- **Type**
+
+```ts
+function onBeforeMount(callback: () => void): void
+```
+
+- **Details**
+
+When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.
+
+> **_This hook is not called during server-side rendering._**
+
+- **Example**
+
+```vue
+<template>
+  <div ref="root">Hello World</div>
+</template>
+
+<script>
+import { ref, onBeforeMount } from 'vue'
+
+export default {
+  setup() {
+    const root = ref(null)
+    onBeforeMount(() => {
+      console.log(root.value)
+    })
+    return {
+      root,
+    }
+  },
+  beforeMount() {
+    console.log(this.$el)
+  },
+}
+</script>
+```
+
+![onBeforeMount()](https://i.imgur.com/AQ8JcTL.png)
+</details>
+
+Then, the corresponding script to try and access the ref.
+
+Since, `app.$el` isn't yet created, the output will be undefined.
+
+While it's preferred that you use `created()`/`setup()` to perform your API calls, this is really the last step you should call them before it's unnecessary late in the process because it’s right after created — they have access to the same component variables.
+
+### `mounted()` and `onMounted()`
+
+Register a callback to be called after the component has been mounted
+
+<details>
+<summary><b>Options API<b></summary>
+
+- **Type**
+
+```ts
+interface ComponentOptions {
+  mounted?(this: ComponentPublicInstance): void
+}
+```
+
+- **Details**
+
+A component is considered mounted after:
+
+- All of its synchronous child components have been mounted (does not include async components or components inside `<Suspense>` trees).
+- Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component's DOM tree is in-document if the application's root container is also in-document.
+
+This hook is typically used for performing side effects that need access to the component's rendered DOM, or for limiting DOM-related code to the client in a [server-rendered application](https://vuejs.org/guide/scaling-up/ssr).
+
+> **_This hook is not called during server-side rendering._**
+
+- **Example**
+
+```js
+export default {
+  mounted() {
+    console.log(this.$el)
+  },
+}
+```
+
+![mounted()](https://i.imgur.com/zvAyyzr.png)
+
+
+</details>
+
+<details>
+<summary><b>Composition API<b></summary>
+
+- **Details**
+
+A component is considered mounted after:
+
+- All of its synchronous child components have been mounted (does not include async components or components inside `<Suspense>` trees).
+- Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component's DOM tree is in-document if the application's root container is also in-document.
+- This hook is typically used for performing side effects that need access to the component's rendered DOM, or for limiting DOM-related code to the client in a [server-rendered application](https://vuejs.org/guide/scaling-up/ssr.html).
+
+> **_This hook is not called during server-side rendering._**
+
+- **Example**
+
+```vue
+<script>
+import { ref, onMounted } from 'vue'
+
+export default {
+  setup() {
+    /* Composition API */
+
+    const root = ref(null)
+
+    onMounted(() => {
+      console.log(root.value)
+    })
+
+    return {
+      root,
+    }
+  },
+}
+</script>
+
+![onMounted()](https://i.imgur.com/czTBiN8.png)
+
+<template></template>
+```
+</details>
+
+## Update Hooks – Reactivity in the VueJS Lifecycle
+
+Progress ..

@@ -7,7 +7,7 @@ toc: true
 Every application instance exposes a `config` object that contains the configuration settings for that application. You can modify its properties before mounting your application.
 
 ## Application API
-### CreateApp()
+### `CreateApp()`
 Creates an application instance.
 - **Type**
 
@@ -40,10 +40,10 @@ import App from './App.vue'
 const app = createApp(App)
 ```
 
-### createSSRApp()
+### `createSSRApp()`
 ​Creates an application instance in [SSR Hydration](https://vuejs.org/guide/scaling-up/ssr#client-hydration) mode. Usage is exactly the same as `createApp()`.
 
-### app.mount()
+### `app.mount()`
 ​Mounts the application instance in a container element.
 
 - **Type**
@@ -79,7 +79,7 @@ Can also mount to an actual DOM element:
 app.mount(document.body.firstChild)
 ```
 
-### app.unmount()
+### `app.unmount()`
 ​Unmounts a mounted application instance, triggering the unmount lifecycle hooks for all components in the application's component tree.
 
 - **Type**
@@ -90,7 +90,7 @@ interface App {
 }
 ```
 
-### app.component()
+### `app.component()`
 ​Registers a global component if passing both a name string and a component definition, or retrieves an already registered one if only the name is passed.
 
 - **Type**
@@ -120,7 +120,7 @@ const MyComponent = app.component('my-component')
 
 - **See also** [Component Registration](https://vuejs.org/guide/components/registration)
 
-### app.directive()
+### `app.directive()`
 Registers a global custom directive if passing both a name string and a directive definition, or retrieves an already registered one if only the name is passed.
 
 - **Type**
@@ -156,7 +156,7 @@ const myDirective = app.directive('my-directive')
 
 - **See also** [Custom Directives](https://vuejs.org/guide/reusability/custom-directives)
 
-### app.use()
+### `app.use()`
 ​Installs a [plugin](https://vuejs.org/guide/reusability/plugins).
 
 - **Type**
@@ -190,7 +190,7 @@ app.use(MyPlugin)
 
 - **See also** [Plugins](https://vuejs.org/guide/reusability/plugins)
 
-### app.mixin()
+### `app.mixin()`
 ​Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.
 
 > **_Not Recommended_**
@@ -207,7 +207,7 @@ interface App {
 }
 ```
 
-### app.provide()
+### `app.provide()`
 ​Provide a value that can be injected in all descendant components within the application.
 
 - **Type**
@@ -248,7 +248,7 @@ export default {
     - [App-level Provide](https://vuejs.org/guide/components/provide-inject#app-level-provide)
     - [app.runWithContext()](https://vuejs.org/api/application.html#app-runwithcontext)
 
-### app.runWithContext() `3.3+`
+### `app.runWithContext()` `3.3+`
 ​Execute a callback with the current app as injection context.
 
 - **Type**
@@ -277,7 +277,7 @@ const injected = app.runWithContext(() => {
 console.log(injected) // 1
 ```
 
-### app.version
+### `app.version`
 ​Provides the version of Vue that the application was created with. This is useful inside [plugins](https://vuejs.org/guide/reusability/plugins), where you might need conditional logic based on different Vue versions.
 
 - **Type**
@@ -305,7 +305,7 @@ export default {
 
 - **See also** [Global API - version](https://vuejs.org/api/general#version)
 
-### app.config
+### `app.config`
 ​Every application instance exposes a `config` object that contains the configuration settings for that application. You can modify its properties (documented below) before mounting your application.
 
 ```js
@@ -316,7 +316,7 @@ const app = createApp(/* ... */)
 console.log(app.config)
 ```
 
-### app.config.errorHandler
+### `app.config.errorHandler`
 ​Assign a global handler for uncaught errors propagating from within the application.
 
 - **Type**
@@ -359,7 +359,7 @@ app.config.errorHandler = (err, instance, info) => {
 }
 ```
 
-### app.config.warnHandler
+### `app.config.warnHandler`
 ​Assign a custom handler for runtime warnings from Vue.
 
 - **Type**
@@ -392,14 +392,14 @@ app.config.warnHandler = (msg, instance, trace) => {
 }
 ```
 
-### app.config.performance
+### `app.config.performance`
 ​Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
 
 - **Type:** `boolean`
 
 - **See also** [Guide - Performance](https://vuejs.org/guide/best-practices/performance)
 
-### app.config.compilerOptions
+### `app.config.compilerOptions`
 ​Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](https://vuejs.org/api/options-rendering#compileroptions).
 
 > **_Important_**
@@ -409,7 +409,7 @@ app.config.warnHandler = (msg, instance, trace) => {
 > - _For `vue-loader`: [pass via the `compilerOptions` loader option. Also see how to configure it in `vue-cli`](https://vue-loader.vuejs.org/options.html#compileroptions)._
 > - _For `vite`: [pass via `@vitejs/plugin-vue` options](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options)._
 
-### app.config.compilerOptions.isCustomElement
+### `app.config.compilerOptions.isCustomElement`
 ​Specifies a check method to recognize native custom elements.
 
 - **Type:** `(tag: string) => boolean`
@@ -431,7 +431,7 @@ app.config.compilerOptions.isCustomElement = (tag) => {
 
 - **See also** [Vue and Web Components](https://vuejs.org/guide/extras/web-components)
 
-### app.config.compilerOptions.whitespace
+### `app.config.compilerOptions.whitespace`
 ​Adjusts template whitespace handling behavior.
 
 - **Type:** `'condense' | 'preserve'`
@@ -454,7 +454,7 @@ Setting this option to `'preserve'` will disable (2) and (3).
 app.config.compilerOptions.whitespace = 'preserve'
 ```
 
-### app.config.compilerOptions.delimiters
+### `app.config.compilerOptions.delimiters`
 ​Adjusts the delimiters used for text interpolation within the template.
 
 - **Type:** `[string, string]`
@@ -472,7 +472,7 @@ This is typically used to avoid conflicting with server-side frameworks that als
 app.config.compilerOptions.delimiters = ['${', '}']
 ```
 
-### app.config.compilerOptions.comments
+### `app.config.compilerOptions.comments`
 ​Adjusts treatment of HTML comments in templates.
 
 - **Type:** `boolean`
@@ -489,7 +489,7 @@ By default, Vue will remove the comments in production. Setting this option to `
 app.config.compilerOptions.comments = true
 ```
 
-### app.config.globalProperties
+### `app.config.globalProperties`
 ​An object that can be used to register global properties that can be accessed on any component instance inside the application.
 
 - **Type**
@@ -524,7 +524,7 @@ export default {
 
 - **See also** [Guide - Augmenting Global Properties `TS`](https://vuejs.org/guide/typescript/options-api#augmenting-global-properties)
 
-### app.config.optionMergeStrategies
+### `app.config.optionMergeStrategies`
 ​An object for defining merging strategies for custom component options.
 
 - **Type**
