@@ -17,8 +17,11 @@
 <meta property="og:description" content="Each Vue component instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
+<meta property="og:image" content="https://i.imgur.com/9Mf222Q.png">
+<meta property="og:image" content="https://i.imgur.com/K7Cnypd.png">
+<meta property="og:image" content="https://i.imgur.com/cdV98eQ.png">
 <meta property="article:published_time" content="2024-04-16T13:00:21.000Z">
-<meta property="article:modified_time" content="2024-04-16T14:50:20.223Z">
+<meta property="article:modified_time" content="2024-04-17T01:30:33.293Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
@@ -188,10 +191,10 @@
     <div class="inner profile-inner">
         <div class="base-info profile-block">
             <img id="avatar" src="https://www.gravatar.com/avatar/d2769a126b1c2dfa9eb6cd76d8b692a5?s=128">
-            <h2 id="name">Aritlh</h2>
+            <h2 id="name">Aritlh (Kih)</h2>
             <h3 id="title">Designer &amp; Programmer</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>S.R.Yogyakarta, Bantul Regency</span>
-            <a id="follow" target="_blank" href="https://github.com/aritlh/" rel="external nofollow noopener noreferrer">FOLLOW</a>
+            <span id="location"><i class="fa fa-map-marker"></i>S.C.R. Of Jakarta</span>
+            <a id="follow" target="_blank" href="https://github.com/aritlh" rel="external nofollow noopener noreferrer">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
@@ -210,7 +213,7 @@
                     
                     
                     <td>
-                        <a href="https://github.com/aritlh/aritlh.github.io" target="_blank" title="github" class="tooltip" rel="external nofollow noopener noreferrer">
+                        <a href="https://github.com/aritlh" target="_blank" title="github" class="tooltip" rel="external nofollow noopener noreferrer">
                             
                                 <i class="fa-brands fa-github"></i>
                             
@@ -226,7 +229,7 @@
                     </td>
                     
                     <td>
-                        <a href="/null" target="_blank" title="twitter" class="tooltip">
+                        <a href="https://x.com/aritlh" target="_blank" title="twitter" class="tooltip" rel="external nofollow noopener noreferrer">
                             
                                 <i class="fa-brands fa-twitter"></i>
                             
@@ -560,7 +563,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#An-In-Depth-Look-at-Each-Lifecycle-Hook"><span class="toc-number">5.</span> <span class="toc-text">An In-Depth Look at Each Lifecycle Hook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creation-Hooks"><span class="toc-number">6.</span> <span class="toc-text">Creation Hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate-Options-API"><span class="toc-number">6.1.</span> <span class="toc-text">beforeCreate() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created-Options-API"><span class="toc-number">6.2.</span> <span class="toc-text">created() - Options API</span></a></li></ol></li></ol>
                 </div>
             
         
@@ -613,18 +616,9 @@
 <p>In the Composition API, we’ve to import lifecycle hooks into our project before we can use them. This is to help keep projects as lightweight as possible.</p>
 <figure class="shiki js"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span></code></pre></div></div></figure>
 
-<p>Excluding <code>beforeCreate</code> and <code>created</code> (which are replaced by the <code>setup</code> method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.</p>
+<p>Excluding <code>beforeCreate()</code> and <code>created()</code> (which are replaced by the <code>setup()</code> method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.</p>
 <p>See details <a target="_blank" rel="external nofollow noopener noreferrer" href="https://vuejs.org/api/composition-api-lifecycle.html">Composition API Lifecycle Hooks</a>.</p>
 <p>When we import them and access them in our code, it would look like this.</p>
-<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E"> </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">&gt;</span></span>
-<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #6F42C1">onMounted</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span></span>
-<span class="line"><span style="color: #24292E">  console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`the component is now mounted.`</span><span style="color: #24292E">)</span></span>
-<span class="line"><span style="color: #24292E">})</span></span>
-<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
-
-<p>without <code>setup</code></p>
 <figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
 <span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { onMounted } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
 <span class="line"></span>
@@ -636,6 +630,40 @@
 <span class="line"><span style="color: #24292E">  },</span></span>
 <span class="line"><span style="color: #24292E">}</span></span>
 <span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<h2 id="An-In-Depth-Look-at-Each-Lifecycle-Hook"><a href="#An-In-Depth-Look-at-Each-Lifecycle-Hook" class="headerlink" title="An In-Depth Look at Each Lifecycle Hook"></a>An In-Depth Look at Each Lifecycle Hook</h2><p>We now understand two important things:</p>
+<ul>
+<li>The different lifecycle hooks we can use</li>
+<li>How to use them in both the Options API and the Composition API</li>
+</ul>
+<p>Let’s take a deeper dive at each lifecycle hook and look at how they’re used, what kind of code we can write in each one, and the differences between them in the Options API and Composition API.</p>
+<h2 id="Creation-Hooks"><a href="#Creation-Hooks" class="headerlink" title="Creation Hooks"></a>Creation Hooks</h2><p>Creation hooks are they very first thing that runs in program.</p>
+<h3 id="beforeCreate-Options-API"><a href="#beforeCreate-Options-API" class="headerlink" title="beforeCreate() - Options API"></a><code>beforeCreate()</code> - Options API</h3><p>Since the craeted hook is the thing that initializes all of the reactive data and events, <code>beforeCreate()</code> doesn’t have access to any of a component’s reactive data and events.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">        </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">            val: </span><span style="color: #032F62">&quot;Hello&quot;</span></span>
+<span class="line"><span style="color: #24292E">        }</span></span>
+<span class="line"><span style="color: #24292E">    },</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">beforeCreate</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">        console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`Value of val is: ${</span><span style="color: #005CC5">this</span><span style="color: #032F62">.</span><span style="color: #24292E">val</span><span style="color: #032F62">}`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
+<p>The output value of <code>val</code> is <code>undefined</code> ‘cause data hasn’t been initialized yet. You also can’t call your component methods in this method either:</p>
+<p><img src="https://i.imgur.com/9Mf222Q.png" alt="beforeCreate()"></p>
+<p>If you wanna see a full list of what is available, I’d recommend just running <code>console.log(this)</code> to see what has been initialized. This is useful in every hook too using the Options API.</p>
+<p><img src="https://i.imgur.com/K7Cnypd.png" alt="Full List of What is Available"></p>
+<h3 id="created-Options-API"><a href="#created-Options-API" class="headerlink" title="created() - Options API"></a><code>created()</code> - Options API</h3><p>We now have access to the component’s data and events. So modifying the example from above to use <code>created()</code> instead <code>beforeCreate()</code> we see how the output changes.</p>
+<p><img src="https://i.imgur.com/cdV98eQ.png" alt="created()"></p>
+<p>The output of this would be <code>Value of val is: hello</code> because we have initialized our data.</p>
+<p>Using the created method is useful when dealing with reading&#x2F;writing the reactive data. For example, if you want to make an API call and then store that value, this is the place to do it.</p>
+<p>It’s better to do that here than in mounted because it happens earlier in Vue’s synchronous initialization process and you perform data reading&#x2F;writing all you want.</p>
+
             </div>
         
         <footer class="article-footer">
