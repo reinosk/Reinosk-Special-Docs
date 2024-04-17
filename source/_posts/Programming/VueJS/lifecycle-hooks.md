@@ -76,23 +76,11 @@ In the Composition API, we've to import lifecycle hooks into our project before 
 import { onMounted } from 'vue'
 ```
 
-Excluding `beforeCreate` and `created` (which are replaced by the `setup` method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.
+Excluding `beforeCreate()` and `created()` (which are replaced by the `setup()` method itself), there are 12 of the Options API lifecycle host that we can access in our setup method.
 
 See details [Composition API Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html).
 
 When we import them and access them in our code, it would look like this.
-
-```vue
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  console.log(`the component is now mounted.`)
-})
-</script>
-```
-
-without `setup`
 
 ```vue
 <script>
@@ -107,3 +95,53 @@ export default {
 }
 </script>
 ```
+
+## An In-Depth Look at Each Lifecycle Hook
+We now understand two important things:
+
+- The different lifecycle hooks we can use
+- How to use them in both the Options API and the Composition API
+
+Let’s take a deeper dive at each lifecycle hook and look at how they’re used, what kind of code we can write in each one, and the differences between them in the Options API and Composition API.
+
+## Creation Hooks
+Creation hooks are they very first thing that runs in program.
+
+### `beforeCreate()` - Options API
+Since the craeted hook is the thing that initializes all of the reactive data and events, `beforeCreate()` doesn't have access to any of a component's reactive data and events.
+
+```vue
+<script>
+export default {
+    data() {
+        return {
+            val: "Hello"
+        }
+    },
+    beforeCreate() {
+        console.log(`Value of val is: ${this.val}`)
+    }
+}
+</script>
+
+<template></template>
+```
+
+The output value of `val` is `undefined` 'cause data hasn't been initialized yet. You also can't call your component methods in this method either:
+
+![beforeCreate()](https://i.imgur.com/9Mf222Q.png)
+
+If you wanna see a full list of what is available, I'd recommend just running `console.log(this)` to see what has been initialized. This is useful in every hook too using the Options API.
+
+![Full List of What is Available](https://i.imgur.com/K7Cnypd.png)
+
+### `created()` - Options API
+We now have access to the component's data and events. So modifying the example from above to use `created()` instead `beforeCreate()` we see how the output changes.
+
+![created()](https://i.imgur.com/cdV98eQ.png)
+
+The output of this would be `Value of val is: hello` because we have initialized our data.
+
+Using the created method is useful when dealing with reading/writing the reactive data. For example, if you want to make an API call and then store that value, this is the place to do it.
+
+It’s better to do that here than in mounted because it happens earlier in Vue’s synchronous initialization process and you perform data reading/writing all you want.
