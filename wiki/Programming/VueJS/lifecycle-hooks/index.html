@@ -20,8 +20,9 @@
 <meta property="og:image" content="https://i.imgur.com/9Mf222Q.png">
 <meta property="og:image" content="https://i.imgur.com/K7Cnypd.png">
 <meta property="og:image" content="https://i.imgur.com/cdV98eQ.png">
+<meta property="og:image" content="https://i.imgur.com/2xveaxk.png">
 <meta property="article:published_time" content="2024-04-16T13:00:21.000Z">
-<meta property="article:modified_time" content="2024-04-17T01:30:33.293Z">
+<meta property="article:modified_time" content="2024-04-17T01:53:58.137Z">
 <meta property="article:author" content="Aritlh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vuejs.org/assets/lifecycle.MuZLBFAS.png">
@@ -563,7 +564,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#An-In-Depth-Look-at-Each-Lifecycle-Hook"><span class="toc-number">5.</span> <span class="toc-text">An In-Depth Look at Each Lifecycle Hook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creation-Hooks"><span class="toc-number">6.</span> <span class="toc-text">Creation Hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate-Options-API"><span class="toc-number">6.1.</span> <span class="toc-text">beforeCreate() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created-Options-API"><span class="toc-number">6.2.</span> <span class="toc-text">created() - Options API</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registering-Lifecycle-Hooks"><span class="toc-number">1.</span> <span class="toc-text">Registering Lifecycle Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Diagram"><span class="toc-number">2.</span> <span class="toc-text">Lifecycle Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Options-API"><span class="toc-number">3.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Options API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-our-Vue-Lifecycle-Hooks-in-the-Vue-Composition-API"><span class="toc-number">4.</span> <span class="toc-text">Using our Vue Lifecycle Hooks in the Vue Composition API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#An-In-Depth-Look-at-Each-Lifecycle-Hook"><span class="toc-number">5.</span> <span class="toc-text">An In-Depth Look at Each Lifecycle Hook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creation-Hooks-The-Start-of-the-VueJS-Lifecycle"><span class="toc-number">6.</span> <span class="toc-text">Creation Hooks - The Start of the VueJS Lifecycle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate-Options-API"><span class="toc-number">6.1.</span> <span class="toc-text">beforeCreate() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created-Options-API"><span class="toc-number">6.2.</span> <span class="toc-text">created() - Options API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-about-the-Composition-API-Creation-Hooks"><span class="toc-number">6.3.</span> <span class="toc-text">What about the Composition API Creation Hooks?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mounting-Hooks-%E2%80%93-Accessing-the-DOM"><span class="toc-number">7.</span> <span class="toc-text">Mounting Hooks – Accessing the DOM</span></a></li></ol>
                 </div>
             
         
@@ -637,18 +638,18 @@
 <li>How to use them in both the Options API and the Composition API</li>
 </ul>
 <p>Let’s take a deeper dive at each lifecycle hook and look at how they’re used, what kind of code we can write in each one, and the differences between them in the Options API and Composition API.</p>
-<h2 id="Creation-Hooks"><a href="#Creation-Hooks" class="headerlink" title="Creation Hooks"></a>Creation Hooks</h2><p>Creation hooks are they very first thing that runs in program.</p>
+<h2 id="Creation-Hooks-The-Start-of-the-VueJS-Lifecycle"><a href="#Creation-Hooks-The-Start-of-the-VueJS-Lifecycle" class="headerlink" title="Creation Hooks - The Start of the VueJS Lifecycle"></a>Creation Hooks - The Start of the VueJS Lifecycle</h2><p>Creation hooks are they very first thing that runs in program.</p>
 <h3 id="beforeCreate-Options-API"><a href="#beforeCreate-Options-API" class="headerlink" title="beforeCreate() - Options API"></a><code>beforeCreate()</code> - Options API</h3><p>Since the craeted hook is the thing that initializes all of the reactive data and events, <code>beforeCreate()</code> doesn’t have access to any of a component’s reactive data and events.</p>
 <figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
 <span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
-<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
-<span class="line"><span style="color: #24292E">        </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
-<span class="line"><span style="color: #24292E">            val: </span><span style="color: #032F62">&quot;Hello&quot;</span></span>
-<span class="line"><span style="color: #24292E">        }</span></span>
-<span class="line"><span style="color: #24292E">    },</span></span>
-<span class="line"><span style="color: #24292E">    </span><span style="color: #6F42C1">beforeCreate</span><span style="color: #24292E">() {</span></span>
-<span class="line"><span style="color: #24292E">        console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`Value of val is: ${</span><span style="color: #005CC5">this</span><span style="color: #032F62">.</span><span style="color: #24292E">val</span><span style="color: #032F62">}`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      val: </span><span style="color: #032F62">&quot;Hello&quot;</span></span>
 <span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">beforeCreate</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`Value of val is: ${</span><span style="color: #005CC5">this</span><span style="color: #032F62">.</span><span style="color: #24292E">val</span><span style="color: #032F62">}`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
 <span class="line"><span style="color: #24292E">}</span></span>
 <span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
 <span class="line"></span>
@@ -659,10 +660,42 @@
 <p>If you wanna see a full list of what is available, I’d recommend just running <code>console.log(this)</code> to see what has been initialized. This is useful in every hook too using the Options API.</p>
 <p><img src="https://i.imgur.com/K7Cnypd.png" alt="Full List of What is Available"></p>
 <h3 id="created-Options-API"><a href="#created-Options-API" class="headerlink" title="created() - Options API"></a><code>created()</code> - Options API</h3><p>We now have access to the component’s data and events. So modifying the example from above to use <code>created()</code> instead <code>beforeCreate()</code> we see how the output changes.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">data</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      val: </span><span style="color: #032F62">&quot;Hello&quot;</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">created</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">`Value of val is: ${</span><span style="color: #005CC5">this</span><span style="color: #032F62">.</span><span style="color: #24292E">val</span><span style="color: #032F62">}`</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">  }</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+
 <p><img src="https://i.imgur.com/cdV98eQ.png" alt="created()"></p>
 <p>The output of this would be <code>Value of val is: hello</code> because we have initialized our data.</p>
 <p>Using the created method is useful when dealing with reading&#x2F;writing the reactive data. For example, if you want to make an API call and then store that value, this is the place to do it.</p>
 <p>It’s better to do that here than in mounted because it happens earlier in Vue’s synchronous initialization process and you perform data reading&#x2F;writing all you want.</p>
+<h3 id="What-about-the-Composition-API-Creation-Hooks"><a href="#What-about-the-Composition-API-Creation-Hooks" class="headerlink" title="What about the Composition API Creation Hooks?"></a>What about the Composition API Creation Hooks?</h3><p>For the Vue 3 Lifecycle Hooks using the Composition API, both <code>beforeCreate()</code> and <code>created()</code> are replaced by the <code>setup()</code> method. This means that any code you would have put inside either of these methods is now just inside your setup method.</p>
+<figure class="shiki vue"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki github-light"><code><span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"><span style="color: #D73A49">import</span><span style="color: #24292E"> { ref } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#39;vue&#39;</span></span>
+<span class="line"><span style="color: #D73A49">export</span><span style="color: #24292E"> </span><span style="color: #D73A49">default</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">  </span><span style="color: #6F42C1">setup</span><span style="color: #24292E">() {</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">val</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">ref</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;hello this is composition API&#39;</span><span style="color: #24292E">)</span></span>
+<span class="line"><span style="color: #24292E">    console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#39;Value of val is: &#39;</span><span style="color: #24292E"> </span><span style="color: #D73A49">+</span><span style="color: #24292E"> val.value)</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">return</span><span style="color: #24292E"> {</span></span>
+<span class="line"><span style="color: #24292E">      val,</span></span>
+<span class="line"><span style="color: #24292E">    }</span></span>
+<span class="line"><span style="color: #24292E">  },</span></span>
+<span class="line"><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #24292E">&lt;</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">template</span><span style="color: #24292E">&gt;</span></span></code></pre></div></div></figure>
+<p><img src="https://i.imgur.com/2xveaxk.png" alt="Composition API Creation Hooks"></p>
+<h2 id="Mounting-Hooks-–-Accessing-the-DOM"><a href="#Mounting-Hooks-–-Accessing-the-DOM" class="headerlink" title="Mounting Hooks – Accessing the DOM"></a>Mounting Hooks – Accessing the DOM</h2><p>progress ..</p>
 
             </div>
         
