@@ -104,7 +104,7 @@ We now understand two important things:
 
 Let’s take a deeper dive at each lifecycle hook and look at how they’re used, what kind of code we can write in each one, and the differences between them in the Options API and Composition API.
 
-## Creation Hooks
+## Creation Hooks - The Start of the VueJS Lifecycle
 Creation hooks are they very first thing that runs in program.
 
 ### `beforeCreate()` - Options API
@@ -113,14 +113,14 @@ Since the craeted hook is the thing that initializes all of the reactive data an
 ```vue
 <script>
 export default {
-    data() {
-        return {
-            val: "Hello"
-        }
-    },
-    beforeCreate() {
-        console.log(`Value of val is: ${this.val}`)
+  data() {
+    return {
+      val: "Hello"
     }
+  },
+  beforeCreate() {
+    console.log(`Value of val is: ${this.val}`)
+  }
 }
 </script>
 
@@ -138,6 +138,23 @@ If you wanna see a full list of what is available, I'd recommend just running `c
 ### `created()` - Options API
 We now have access to the component's data and events. So modifying the example from above to use `created()` instead `beforeCreate()` we see how the output changes.
 
+```vue
+<script>
+export default {
+  data() {
+    return {
+      val: "Hello"
+    }
+  },
+  created() {
+    console.log(`Value of val is: ${this.val}`)
+  }
+}
+</script>
+
+<template></template>
+```
+
 ![created()](https://i.imgur.com/cdV98eQ.png)
 
 The output of this would be `Value of val is: hello` because we have initialized our data.
@@ -145,3 +162,28 @@ The output of this would be `Value of val is: hello` because we have initialized
 Using the created method is useful when dealing with reading/writing the reactive data. For example, if you want to make an API call and then store that value, this is the place to do it.
 
 It’s better to do that here than in mounted because it happens earlier in Vue’s synchronous initialization process and you perform data reading/writing all you want.
+
+### What about the Composition API Creation Hooks?
+For the Vue 3 Lifecycle Hooks using the Composition API, both `beforeCreate()` and `created()` are replaced by the `setup()` method. This means that any code you would have put inside either of these methods is now just inside your setup method.
+
+```vue
+<script>
+import { ref } from 'vue'
+export default {
+  setup() {
+    const val = ref('hello this is composition API')
+    console.log('Value of val is: ' + val.value)
+    return {
+      val,
+    }
+  },
+}
+</script>
+
+<template></template>
+```
+![Composition API Creation Hooks](https://i.imgur.com/2xveaxk.png)
+
+## Mounting Hooks – Accessing the DOM
+
+progress ..
