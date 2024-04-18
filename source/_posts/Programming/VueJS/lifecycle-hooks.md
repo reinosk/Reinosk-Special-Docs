@@ -192,7 +192,7 @@ These mounting hooks handle mounting and rendering the component. These are some
 Registers a hook to be called right before the component is to be mounted.
 
 <details>
-<summary><b>Options API<b></summary>
+<summary><b>Options API <code>beforeMount()</code><b></summary>
 
 - **Type**
 
@@ -223,7 +223,7 @@ export default {
 </details>
 
 <details>
-<summary><b>Composition API<b></summary>
+<summary><b>Composition API <code>onBeforeMount()</code><b></summary>
 
 - **Type**
 
@@ -278,7 +278,7 @@ While it's preferred that you use `created()`/`setup()` to perform your API call
 Register a callback to be called after the component has been mounted
 
 <details>
-<summary><b>Options API<b></summary>
+<summary><b>Options API <code>mounted()</code><b></summary>
 
 - **Type**
 
@@ -315,7 +315,7 @@ export default {
 </details>
 
 <details>
-<summary><b>Composition API<b></summary>
+<summary><b>Composition API <code>onMounted()</code><b></summary>
 
 - **Details**
 
@@ -350,12 +350,132 @@ export default {
 }
 </script>
 
-![onMounted()](https://i.imgur.com/czTBiN8.png)
-
 <template></template>
 ```
+
+![onMounted()](https://i.imgur.com/czTBiN8.png)
 </details>
 
 ## Update Hooks – Reactivity in the VueJS Lifecycle
 
-Progress ..
+The updated lifecycle event is triggered whenever reactive data is modified, triggering a render update.
+
+### `beforeUpdate()` and `onBeforeUpdate()`
+
+Register a hook to be called right before the component is about to update it's DOM tree due to a reactive state change.
+
+<details>
+<summary><b>Options API <code>beforeUpdate()</code><b></summary>
+
+- **Type**
+
+```ts
+interface ComponentOptions {
+  beforeUpdate?(this: ComponentPublicInstance): void
+}
+```
+
+- **Details**
+
+This hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify component state inside this hook.
+
+> **_This hook is not called during server-side rendering._**
+
+- **Example**
+
+
+```vue
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+    <button @click="updateMessage">Update Message</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'Hello, World!'
+    }
+  },
+  methods: {
+    updateMessage() {
+      this.message = 'Message Updated!'
+    }
+  },
+  beforeUpdate() {
+    console.log('Component will update!')
+  }
+}
+</script>
+```
+
+![beforeUpdate()](https://i.imgur.com/DGuNkDs.png)
+
+`beforeUpdate()` could be useful for tracking the number of edits made to a component or even tracking the actions to create an “undo” feature.
+
+</details>
+
+<details>
+<summary><b>Composition API <code>onBeforeUpdate()</code><b></summary>
+
+- **Type**
+
+```ts
+function onBeforeUpdate(callback: () => void): void
+```
+
+- **Details**
+
+This hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify component state inside this hook.
+
+> **_This hook isn't called during server-side rendering._**
+
+- **Example**
+
+```vue
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+    <button @click="updateMessage">Update Message</button>
+  </div>
+</template>
+
+<script>
+import { ref, onBeforeUpdate } from 'vue'
+
+export default {
+  setup() {
+    const message = ref('Hello, World!')
+
+    const updateMessage = () => {
+      message.value = 'Message Updated!'
+    }
+
+    onBeforeUpdate(() => {
+      console.log('Component will update!')
+    })
+
+    return {
+      message,
+      updateMessage
+    }
+  }
+}
+</script>
+```
+
+![onBeforeUpdate()](https://i.imgur.com/fni2cWN.png)
+
+</summary>
+
+These methods are useful, but for a lot of use cases we may want to consider using watchers to detect these data changes instead. Watchers are good because they give the old value and the new value of the changed data.
+
+Another option is using computed values to change the state based on elements.
+
+</details>
+
+### `update()` and `onUpdate()`
+
+Progress ...
